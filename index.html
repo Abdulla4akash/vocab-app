@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vocabulary Flashcards</title>
+  <title>maXvocab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -151,6 +151,12 @@
 
     .brand-button:hover {
       color: var(--accent-dark);
+    }
+
+    .brand-x {
+      color: var(--accent);
+      font-size: 1.08em;
+      font-weight: 800;
     }
 
     .breadcrumbs {
@@ -826,7 +832,7 @@
 <body>
   <main class="app">
     <header class="topbar">
-      <button id="homeButton" class="brand-button" type="button">Flashcards</button>
+      <button id="homeButton" class="brand-button" type="button" aria-label="maXvocab home">ma<span class="brand-x">X</span>vocab</button>
       <nav id="breadcrumbs" class="breadcrumbs" aria-label="Breadcrumb"></nav>
     </header>
 
