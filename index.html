@@ -537,6 +537,7 @@
       cursor: pointer;
       background: transparent;
       text-align: inherit;
+      touch-action: pan-y;
     }
 
     .flashcard {
@@ -549,6 +550,40 @@
 
     .card-shell.is-flipped .flashcard {
       transform: rotateY(180deg);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .card-shell.swipe-next {
+        animation: card-swipe-next 180ms ease-out;
+      }
+
+      .card-shell.swipe-previous {
+        animation: card-swipe-previous 180ms ease-out;
+      }
+
+      @keyframes card-swipe-next {
+        from {
+          opacity: 0.94;
+          transform: translateX(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes card-swipe-previous {
+        from {
+          opacity: 0.94;
+          transform: translateX(-18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
     }
 
     .card-face {
@@ -882,8 +917,19 @@
     const CLUSTER_COUNT = 32;
     const SEARCH_RESULT_LIMIT = 50;
     const SEARCH_DEBOUNCE_MS = 150;
+    const SWIPE_THRESHOLD_PX = 50;
 
     let searchDebounceId = null;
+    let swipeAnimationId = null;
+
+    const touchGesture = {
+      startX: 0,
+      startY: 0,
+      currentX: 0,
+      currentY: 0,
+      tracking: false,
+      suppressClick: false
+    };
 
     const state = {
       vocab: [],
@@ -1486,6 +1532,17 @@
       renderCard();
     }
 
+    function handleCardClick(event) {
+      if (touchGesture.suppressClick) {
+        event.preventDefault();
+        event.stopPropagation();
+        touchGesture.suppressClick = false;
+        return;
+      }
+
+      flipCard();
+    }
+
     function moveCard(direction) {
       if (!state.currentDeck.length) return;
       const total = state.currentDeck.length;
@@ -1493,6 +1550,82 @@
       state.flipped = false;
       state.storyVisible = false;
       renderCard();
+    }
+
+    function handleCardTouchStart(event) {
+      if (event.touches.length !== 1) {
+        touchGesture.tracking = false;
+        return;
+      }
+
+      const touch = event.touches[0];
+      touchGesture.startX = touch.clientX;
+      touchGesture.startY = touch.clientY;
+      touchGesture.currentX = touch.clientX;
+      touchGesture.currentY = touch.clientY;
+      touchGesture.tracking = true;
+    }
+
+    function handleCardTouchMove(event) {
+      if (!touchGesture.tracking || event.touches.length !== 1) return;
+
+      const touch = event.touches[0];
+      touchGesture.currentX = touch.clientX;
+      touchGesture.currentY = touch.clientY;
+
+      const deltaX = touchGesture.currentX - touchGesture.startX;
+      const deltaY = touchGesture.currentY - touchGesture.startY;
+
+      if (Math.abs(deltaX) > SWIPE_THRESHOLD_PX && Math.abs(deltaX) > Math.abs(deltaY)) {
+        event.preventDefault();
+      }
+    }
+
+    function handleCardTouchEnd(event) {
+      if (!touchGesture.tracking) return;
+
+      if (event.changedTouches.length) {
+        const touch = event.changedTouches[0];
+        touchGesture.currentX = touch.clientX;
+        touchGesture.currentY = touch.clientY;
+      }
+
+      const deltaX = touchGesture.currentX - touchGesture.startX;
+      const deltaY = touchGesture.currentY - touchGesture.startY;
+      const isSwipe = Math.abs(deltaX) > SWIPE_THRESHOLD_PX && Math.abs(deltaX) > Math.abs(deltaY);
+      touchGesture.tracking = false;
+
+      if (!isSwipe) return;
+
+      event.preventDefault();
+      touchGesture.suppressClick = true;
+
+      if (deltaX < 0) {
+        moveCard(1);
+        animateSwipe("swipe-next");
+      } else {
+        moveCard(-1);
+        animateSwipe("swipe-previous");
+      }
+
+      window.setTimeout(() => {
+        touchGesture.suppressClick = false;
+      }, 350);
+    }
+
+    function handleCardTouchCancel() {
+      touchGesture.tracking = false;
+    }
+
+    function animateSwipe(className) {
+      window.clearTimeout(swipeAnimationId);
+      els.cardShell.classList.remove("swipe-next", "swipe-previous");
+      void els.cardShell.offsetWidth;
+      els.cardShell.classList.add(className);
+
+      swipeAnimationId = window.setTimeout(() => {
+        els.cardShell.classList.remove("swipe-next", "swipe-previous");
+      }, 220);
     }
 
     function shuffleDeck() {
@@ -1508,6 +1641,13 @@
 
     function toggleStory(event) {
       event.stopPropagation();
+
+      if (touchGesture.suppressClick) {
+        event.preventDefault();
+        touchGesture.suppressClick = false;
+        return;
+      }
+
       const card = state.currentDeck[state.currentIndex];
       if (!card || !state.blurbs[card.word]) return;
       state.storyVisible = !state.storyVisible;
@@ -1515,7 +1655,11 @@
     }
 
     els.homeButton.addEventListener("click", () => showHome());
-    els.cardShell.addEventListener("click", flipCard);
+    els.cardShell.addEventListener("click", handleCardClick);
+    els.cardShell.addEventListener("touchstart", handleCardTouchStart, { passive: true });
+    els.cardShell.addEventListener("touchmove", handleCardTouchMove, { passive: false });
+    els.cardShell.addEventListener("touchend", handleCardTouchEnd, { passive: false });
+    els.cardShell.addEventListener("touchcancel", handleCardTouchCancel, { passive: true });
     els.backButton.addEventListener("click", handleBack);
     els.shuffleButton.addEventListener("click", shuffleDeck);
     els.previousButton.addEventListener("click", () => moveCard(-1));
