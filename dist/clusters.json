@@ -1,0 +1,162 @@
+{
+  "0": {
+    "name": "Mixed Vocabulary",
+    "desc": "Words from diverse semantic domains, no clear common theme.",
+    "count": 119
+  },
+  "1": {
+    "name": "Mixed Vocabulary",
+    "desc": "A collection of semantically unrelated words and idioms.",
+    "count": 112
+  },
+  "2": {
+    "name": "Mixed Vocabulary",
+    "desc": "Collection of unrelated words spanning various domains.",
+    "count": 219
+  },
+  "3": {
+    "name": "Pestering & Harassment",
+    "desc": "Words related to annoying, bothering, or intimidating others.",
+    "count": 107
+  },
+  "4": {
+    "name": "Power & Social Stratification",
+    "desc": "Political systems, ideologies, and social classes.",
+    "count": 117
+  },
+  "5": {
+    "name": "Mixed Vocabulary",
+    "desc": "A diverse set of words from various domains without a single clear semantic theme.",
+    "count": 144
+  },
+  "6": {
+    "name": "Mixed Vocabulary",
+    "desc": "A collection of words with diverse meanings, not easily grouped into a single semantic theme.",
+    "count": 207
+  },
+  "7": {
+    "name": "Vibrancy & Allure",
+    "desc": "Words conveying liveliness, charm, and opulence.",
+    "count": 137
+  },
+  "8": {
+    "name": "Wit & Charisma",
+    "desc": "Qualities of clever, confident, and stylish expression.",
+    "count": 14
+  },
+  "9": {
+    "name": "Literary & Emotional Tones",
+    "desc": "Words describing mood, expression, and unusual qualities.",
+    "count": 142
+  },
+  "10": {
+    "name": "Adversity & Demoralization",
+    "desc": "Words describing hardship, criticism, and decline.",
+    "count": 175
+  },
+  "11": {
+    "name": "Mixed Vocabulary",
+    "desc": "A diverse set of words from various semantic fields.",
+    "count": 142
+  },
+  "12": {
+    "name": "Strife & Turmoil",
+    "desc": "Words denoting conflict, chaos, and intense disturbance.",
+    "count": 37
+  },
+  "13": {
+    "name": "Language & Writing",
+    "desc": "Words related to language, speech, and written communication",
+    "count": 29
+  },
+  "14": {
+    "name": "Peril and Refuge",
+    "desc": "Dangers and safe havens in nature and human life.",
+    "count": 106
+  },
+  "15": {
+    "name": "Academic Discourse & Critique",
+    "desc": "Words related to scholarly language, criticism, and abstract thought.",
+    "count": 122
+  },
+  "16": {
+    "name": "Mixed Vocabulary",
+    "desc": "A diverse collection of words covering various domains, including traits, emotions, actions, and abstract concepts.",
+    "count": 243
+  },
+  "17": {
+    "name": "Religious and Emotional Vocabulary",
+    "desc": "Words related to religious rituals and strong emotions.",
+    "count": 11
+  },
+  "18": {
+    "name": "Subtle Nuances & Perceptions",
+    "desc": "Describing refined perception, subtlety, and complexity.",
+    "count": 272
+  },
+  "19": {
+    "name": "Mixed Vocabulary",
+    "desc": "A diverse set of words with no single unifying theme.",
+    "count": 249
+  },
+  "20": {
+    "name": "French Refinement & Social Status",
+    "desc": "Words denoting skill, social class, and sophistication from French.",
+    "count": 12
+  },
+  "21": {
+    "name": "Mixed Vocabulary",
+    "desc": "Words without a clear common theme.",
+    "count": 3
+  },
+  "22": {
+    "name": "Mixed Vocabulary",
+    "desc": "Words from diverse semantic domains including character traits, emotions, and time concepts.",
+    "count": 87
+  },
+  "23": {
+    "name": "Decisive & Conclusive",
+    "desc": "To settle or confirm definitively.",
+    "count": 1
+  },
+  "24": {
+    "name": "Medical & Health Terms",
+    "desc": "Vocabulary related to medicine, disease, and health.",
+    "count": 109
+  },
+  "25": {
+    "name": "Conflict & Cooperation",
+    "desc": "Relationships involving opposition and alliance.",
+    "count": 188
+  },
+  "26": {
+    "name": "Law & Litigation",
+    "desc": "Words related to legal processes, crimes, and court actions.",
+    "count": 98
+  },
+  "27": {
+    "name": "Causative Change",
+    "desc": "Verbs causing alteration or movement between states",
+    "count": 200
+  },
+  "28": {
+    "name": "Conflict and Resolution",
+    "desc": "Words about argument, surrender, and reconciliation.",
+    "count": 111
+  },
+  "29": {
+    "name": "Doctrine and Dissent",
+    "desc": "Belief systems, social hierarchy, and moral critique.",
+    "count": 93
+  },
+  "30": {
+    "name": "Mixed Vocabulary",
+    "desc": "Diverse idioms covering many life situations.",
+    "count": 62
+  },
+  "31": {
+    "name": "Mixed Vocabulary",
+    "desc": "Diverse abstract nouns and adjectives with no single semantic theme.",
+    "count": 143
+  }
+}

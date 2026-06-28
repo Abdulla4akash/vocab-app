@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vocabulary Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --bg-top: #fbf8f2;
+      --surface: #fffdfa;
+      --surface-strong: #ffffff;
+      --surface-alpha: rgba(255, 253, 250, 0.82);
+      --surface-panel: rgba(255, 253, 250, 0.78);
+      --surface-card: rgba(255, 253, 250, 0.92);
+      --surface-ghost: rgba(255, 253, 250, 0.64);
+      --text: #24231f;
+      --muted: #6d685f;
+      --line: #ded7cc;
+      --accent: #47705f;
+      --accent-dark: #315345;
+      --accent-soft: #e6eee9;
+      --accent-border-soft: rgba(71, 112, 95, 0.18);
+      --accent-border: rgba(71, 112, 95, 0.28);
+      --accent-border-strong: rgba(71, 112, 95, 0.45);
+      --ambient: rgba(71, 112, 95, 0.11);
+      --focus: #b76845;
+      --shadow: 0 18px 55px rgba(45, 39, 31, 0.12);
+      --small-shadow: 0 10px 24px rgba(45, 39, 31, 0.055);
+      --hover-shadow: 0 18px 38px rgba(45, 39, 31, 0.1);
+      --placeholder: #8a8478;
+      --danger-bg: #fff7f3;
+      --danger-border: #d7a58f;
+      --danger-text: #6d2e22;
+      --story-text: #3c3933;
+      --on-accent: #ffffff;
+      --radius: 8px;
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111513;
+        --bg-top: #171d1a;
+        --surface: #1b211e;
+        --surface-strong: #232b27;
+        --surface-alpha: rgba(27, 33, 30, 0.86);
+        --surface-panel: rgba(27, 33, 30, 0.78);
+        --surface-card: rgba(27, 33, 30, 0.94);
+        --surface-ghost: rgba(27, 33, 30, 0.64);
+        --text: #f2efe8;
+        --muted: #b6afa3;
+        --line: #39423c;
+        --accent: #7bb59d;
+        --accent-dark: #a4d6c0;
+        --accent-soft: rgba(123, 181, 157, 0.16);
+        --accent-border-soft: rgba(123, 181, 157, 0.18);
+        --accent-border: rgba(123, 181, 157, 0.3);
+        --accent-border-strong: rgba(123, 181, 157, 0.5);
+        --ambient: rgba(123, 181, 157, 0.12);
+        --focus: #e0a477;
+        --shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
+        --small-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+        --hover-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+        --placeholder: #8f988f;
+        --danger-bg: #321f1c;
+        --danger-border: #8f5d4d;
+        --danger-text: #f2c6b7;
+        --story-text: #ebe8df;
+        --on-accent: #101411;
+        color-scheme: dark;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background:
+        radial-gradient(circle at 20% 12%, var(--ambient), transparent 28rem),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 62%);
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    button,
+    input,
+    select,
+    .card-shell,
+    .group-card {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    .card-shell:focus-visible,
+    .group-card:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .app {
+      width: min(1120px, calc(100% - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 22px 0 40px;
+      display: grid;
+      align-content: start;
+      gap: 28px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-button {
+      padding: 0;
+      border: 0;
+      color: var(--text);
+      cursor: pointer;
+      background: transparent;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-button:hover {
+      color: var(--accent-dark);
+    }
+
+    .breadcrumbs {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .breadcrumb-button {
+      max-width: min(38vw, 360px);
+      padding: 4px 0;
+      overflow: hidden;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      background: transparent;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .breadcrumb-button:hover,
+    .breadcrumb-button[aria-current="page"] {
+      color: var(--accent-dark);
+    }
+
+    .breadcrumb-separator {
+      color: var(--muted);
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.1rem);
+    }
+
+    .status,
+    .error {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-panel);
+      box-shadow: var(--shadow);
+    }
+
+    .error {
+      border-color: var(--danger-border);
+      color: var(--danger-text);
+      background: var(--danger-bg);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .home {
+      display: grid;
+      gap: 20px;
+    }
+
+    .home-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .home-header h2 {
+      margin: 0;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      letter-spacing: 0;
+    }
+
+    .total-count {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .home-actions {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-panel {
+      display: grid;
+      gap: 10px;
+    }
+
+    .search-label {
+      display: grid;
+      gap: 8px;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 56px;
+      padding: 0 18px;
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: var(--surface-card);
+      box-shadow: var(--small-shadow);
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .search-input::placeholder {
+      color: var(--placeholder);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-border-strong);
+      background: var(--surface-strong);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .search-results {
+      display: grid;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .search-status {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .search-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .search-result {
+      width: 100%;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: minmax(140px, 0.36fr) 1fr;
+      gap: 14px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      background: var(--surface-alpha);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .search-result:hover,
+    .search-result.is-highlighted {
+      transform: translateY(-1px);
+      border-color: var(--accent-border-strong);
+      background: var(--surface-strong);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .result-word {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .result-name {
+      overflow-wrap: anywhere;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .result-pos {
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .result-def {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .empty-state {
+      margin: 0;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: var(--surface-panel);
+    }
+
+    .group-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 14px;
+    }
+
+    .group-card {
+      position: relative;
+      min-height: 218px;
+      height: 218px;
+      padding: 20px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 16px;
+      overflow: hidden;
+      border: 1px solid var(--accent-border-soft);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      background: var(--surface-alpha);
+      box-shadow: var(--small-shadow);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .group-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: var(--accent);
+      opacity: 0.28;
+    }
+
+    .group-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-border-strong);
+      background: var(--surface-strong);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .group-card.all {
+      grid-column: span 2;
+      border-color: var(--accent-border-strong);
+      background:
+        linear-gradient(135deg, var(--accent-soft), var(--surface-card) 58%),
+        var(--surface);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .cluster-number {
+      display: block;
+      color: var(--accent-dark);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .cluster-copy {
+      display: grid;
+      align-content: start;
+      gap: 9px;
+    }
+
+    .cluster-title {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.55rem, 2.4vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+
+    .cluster-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+
+    .cluster-count {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .study {
+      display: grid;
+      gap: 22px;
+    }
+
+    .study-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .study-title {
+      display: grid;
+      gap: 2px;
+    }
+
+    .study-title h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: 0;
+    }
+
+    .study-actions {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cluster-switch {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cluster-select {
+      max-width: min(42vw, 280px);
+      min-height: 44px;
+      padding: 0 34px 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      cursor: pointer;
+      background-color: var(--surface);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .progress {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .card-stage {
+      perspective: 1400px;
+    }
+
+    .card-shell {
+      width: 100%;
+      min-height: clamp(390px, 56vh, 560px);
+      border: 0;
+      padding: 0;
+      display: block;
+      color: inherit;
+      cursor: pointer;
+      background: transparent;
+      text-align: inherit;
+    }
+
+    .flashcard {
+      position: relative;
+      width: 100%;
+      min-height: inherit;
+      transform-style: preserve-3d;
+      transition: transform 560ms cubic-bezier(0.2, 0.72, 0.2, 1);
+    }
+
+    .card-shell.is-flipped .flashcard {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      min-height: inherit;
+      padding: clamp(28px, 6vw, 64px);
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-card);
+      box-shadow: var(--shadow);
+      backface-visibility: hidden;
+      overflow: auto;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      align-content: start;
+    }
+
+    .word-wrap {
+      display: grid;
+      place-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .word {
+      max-width: 100%;
+      margin: 0;
+      overflow-wrap: anywhere;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(3rem, 11vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .part-of-speech {
+      width: fit-content;
+      margin: 0;
+      padding: 7px 12px;
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .definition-block {
+      display: grid;
+      gap: 20px;
+    }
+
+    .label {
+      margin: 0 0 7px;
+      color: var(--accent-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .definition {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2.25rem);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .sentence {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .story-area {
+      display: grid;
+      gap: 12px;
+      padding-top: 4px;
+    }
+
+    .story-text {
+      margin: 0;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      color: var(--story-text);
+      background: var(--accent-soft);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .button {
+      min-height: 44px;
+      padding: 0 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--surface);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      border-color: var(--accent-border-strong);
+      background: var(--surface-strong);
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      color: var(--on-accent);
+      background: var(--accent);
+    }
+
+    .button.primary:hover:not(:disabled) {
+      color: var(--on-accent);
+      background: var(--accent-dark);
+    }
+
+    .button.ghost {
+      background: var(--surface-ghost);
+    }
+
+    .button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    @media (max-width: 1040px) {
+      .group-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .group-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .group-card.all {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .app {
+        width: min(100% - 24px, 1120px);
+        padding: 16px 0 24px;
+        gap: 24px;
+      }
+
+      .topbar,
+      .home-header,
+      .study-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .breadcrumbs {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .home-actions,
+      .study-actions {
+        justify-content: start;
+      }
+
+      .cluster-select {
+        max-width: calc(100vw - 128px);
+      }
+
+      .card-shell {
+        min-height: 440px;
+      }
+
+      .card-face {
+        padding: 26px 22px;
+      }
+
+      .search-result {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .controls .button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .group-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <button id="homeButton" class="brand-button" type="button">Flashcards</button>
+      <nav id="breadcrumbs" class="breadcrumbs" aria-label="Breadcrumb"></nav>
+    </header>
+
+    <section id="loading" class="status" aria-live="polite">Loading vocabulary...</section>
+    <section id="error" class="error hidden" role="alert"></section>
+
+    <section id="home" class="home hidden" aria-labelledby="homeTitle">
+      <div class="home-header">
+        <div>
+          <h2 id="homeTitle">Choose a group</h2>
+          <p class="subtitle">Pick a named cluster or study the full deck.</p>
+        </div>
+        <div class="home-actions">
+          <p id="totalCount" class="total-count"></p>
+          <button id="randomButton" class="button primary" type="button">Random word</button>
+        </div>
+      </div>
+      <section class="search-panel" aria-label="Search vocabulary">
+        <label class="search-label" for="searchInput">
+          Search vocabulary
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" placeholder="Type a word or meaning..." aria-controls="searchResults" aria-describedby="searchStatus">
+        </label>
+        <div id="searchResults" class="search-results hidden">
+          <p id="searchStatus" class="search-status" aria-live="polite"></p>
+          <div id="searchList" class="search-list" role="listbox" aria-label="Search results"></div>
+        </div>
+      </section>
+      <div id="groupGrid" class="group-grid"></div>
+    </section>
+
+    <section id="study" class="study hidden" aria-labelledby="studyTitle">
+      <div class="study-header">
+        <button id="backButton" class="button ghost" type="button">Back</button>
+        <div class="study-title">
+          <h2 id="studyTitle"></h2>
+          <span id="progress" class="progress" aria-live="polite"></span>
+        </div>
+        <div class="study-actions">
+          <label id="clusterSwitchWrap" class="cluster-switch hidden" for="clusterSelect">
+            Cluster
+            <select id="clusterSelect" class="cluster-select"></select>
+          </label>
+          <button id="shuffleButton" class="button ghost" type="button">Shuffle</button>
+        </div>
+      </div>
+
+      <div class="card-stage">
+        <div id="cardShell" class="card-shell" role="button" tabindex="0" aria-label="Flip flashcard">
+          <article class="flashcard">
+            <div class="card-face card-front">
+              <div class="word-wrap">
+                <p id="word" class="word"></p>
+                <p id="pos" class="part-of-speech"></p>
+              </div>
+              <p class="hint">Tap or press space to flip</p>
+            </div>
+
+            <div class="card-face card-back">
+              <div class="definition-block">
+                <div>
+                  <p class="label">Definition</p>
+                  <p id="definition" class="definition"></p>
+                </div>
+                <div>
+                  <p class="label">Example</p>
+                  <p id="sentence" class="sentence"></p>
+                </div>
+              </div>
+
+              <div class="story-area">
+                <button id="storyButton" class="button primary" type="button">Show story</button>
+                <p id="storyText" class="story-text hidden"></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <nav class="controls" aria-label="Flashcard controls">
+        <button id="previousButton" class="button" type="button">Previous</button>
+        <button id="flipButton" class="button primary" type="button">Flip</button>
+        <button id="nextButton" class="button" type="button">Next</button>
+      </nav>
+    </section>
+  </main>
+
+  <script>
+    const CLUSTER_COUNT = 32;
+    const SEARCH_RESULT_LIMIT = 50;
+    const SEARCH_DEBOUNCE_MS = 150;
+
+    let searchDebounceId = null;
+
+    const state = {
+      vocab: [],
+      blurbs: {},
+      clusters: {},
+      searchIndex: [],
+      searchQuery: "",
+      searchResults: [],
+      highlightedSearchIndex: -1,
+      currentView: "loading",
+      currentDeck: [],
+      currentIndex: 0,
+      currentGroup: null,
+      flipped: false,
+      storyVisible: false
+    };
+
+    const els = {
+      loading: document.querySelector("#loading"),
+      error: document.querySelector("#error"),
+      home: document.querySelector("#home"),
+      study: document.querySelector("#study"),
+      homeButton: document.querySelector("#homeButton"),
+      breadcrumbs: document.querySelector("#breadcrumbs"),
+      searchInput: document.querySelector("#searchInput"),
+      searchResults: document.querySelector("#searchResults"),
+      searchStatus: document.querySelector("#searchStatus"),
+      searchList: document.querySelector("#searchList"),
+      groupGrid: document.querySelector("#groupGrid"),
+      totalCount: document.querySelector("#totalCount"),
+      randomButton: document.querySelector("#randomButton"),
+      studyTitle: document.querySelector("#studyTitle"),
+      progress: document.querySelector("#progress"),
+      clusterSwitchWrap: document.querySelector("#clusterSwitchWrap"),
+      clusterSelect: document.querySelector("#clusterSelect"),
+      cardShell: document.querySelector("#cardShell"),
+      word: document.querySelector("#word"),
+      pos: document.querySelector("#pos"),
+      definition: document.querySelector("#definition"),
+      sentence: document.querySelector("#sentence"),
+      storyButton: document.querySelector("#storyButton"),
+      storyText: document.querySelector("#storyText"),
+      backButton: document.querySelector("#backButton"),
+      shuffleButton: document.querySelector("#shuffleButton"),
+      previousButton: document.querySelector("#previousButton"),
+      flipButton: document.querySelector("#flipButton"),
+      nextButton: document.querySelector("#nextButton")
+    };
+
+    async function fetchJson(path) {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error(`${path} returned ${response.status}`);
+      }
+      return response.json();
+    }
+
+    async function fetchOptionalJson(path) {
+      try {
+        return await fetchJson(path);
+      } catch (error) {
+        return {};
+      }
+    }
+
+    async function init() {
+      try {
+        const [vocabData, blurbData, clusterData] = await Promise.all([
+          fetchJson("vocab.json"),
+          fetchJson("vocab_blurbs.json"),
+          fetchOptionalJson("clusters.json")
+        ]);
+
+        state.vocab = Object.entries(vocabData)
+          .map(([word, data]) => ({ word, ...data }))
+          .sort((a, b) => a.word.localeCompare(b.word));
+        state.blurbs = blurbData || {};
+        state.clusters = clusterData || {};
+        buildSearchIndex();
+
+        renderGroups();
+        renderClusterOptions();
+        showHome();
+      } catch (error) {
+        showError(error);
+      }
+    }
+
+    function showError(error) {
+      els.loading.classList.add("hidden");
+      els.error.classList.remove("hidden");
+      els.error.textContent = `Could not load the vocabulary files. Make sure vocab.json and vocab_blurbs.json are in this folder and the app is served over http, not opened with file://. Details: ${error.message}`;
+    }
+
+    function buildSearchIndex() {
+      state.searchIndex = state.vocab.map((entry) => ({
+        entry,
+        wordText: entry.word.toLowerCase(),
+        defText: String(entry.def || "").toLowerCase()
+      }));
+    }
+
+    function getClusterName(cluster) {
+      const meta = state.clusters[String(cluster)] || {};
+      return typeof meta.name === "string" && meta.name.trim()
+        ? meta.name.trim()
+        : `Cluster ${cluster}`;
+    }
+
+    function getClusterDescription(cluster) {
+      const meta = state.clusters[String(cluster)] || {};
+      return typeof meta.desc === "string" && meta.desc.trim()
+        ? meta.desc.trim()
+        : "";
+    }
+
+    function renderClusterOptions() {
+      els.clusterSelect.replaceChildren();
+
+      for (let cluster = 0; cluster < CLUSTER_COUNT; cluster += 1) {
+        const option = document.createElement("option");
+        option.value = String(cluster);
+        option.textContent = getClusterName(cluster);
+        els.clusterSelect.appendChild(option);
+      }
+    }
+
+    function renderBreadcrumbs() {
+      els.breadcrumbs.replaceChildren();
+      const isHome = state.currentView === "home" && !state.searchQuery;
+
+      els.breadcrumbs.appendChild(createBreadcrumbButton("Home", () => showHome(), isHome));
+
+      const addSegment = (label, action, isCurrent = true) => {
+        const separator = document.createElement("span");
+        separator.className = "breadcrumb-separator";
+        separator.textContent = "›";
+        els.breadcrumbs.appendChild(separator);
+        els.breadcrumbs.appendChild(createBreadcrumbButton(label, action, isCurrent));
+      };
+
+      if (state.currentView === "home" && state.searchQuery) {
+        addSegment("Search", () => els.searchInput.focus({ preventScroll: true }));
+        return;
+      }
+
+      if (state.currentView !== "study") return;
+
+      if (state.currentGroup === "search") {
+        addSegment("Search", () => showHome({ preserveSearch: true, focusSearch: true }));
+        return;
+      }
+
+      if (state.currentGroup === "all") {
+        addSegment("All words", () => {});
+        return;
+      }
+
+      if (state.currentGroup === "random") {
+        addSegment("Random word", () => {});
+        return;
+      }
+
+      addSegment(getClusterName(state.currentGroup), () => {});
+    }
+
+    function createBreadcrumbButton(label, action, isCurrent = false) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "breadcrumb-button";
+      button.textContent = label;
+      if (isCurrent) {
+        button.setAttribute("aria-current", "page");
+      }
+      button.addEventListener("click", action);
+      return button;
+    }
+
+    function renderGroups() {
+      const counts = Array.from({ length: CLUSTER_COUNT }, (_, cluster) =>
+        state.vocab.filter((entry) => Number(entry.cluster) === cluster).length
+      );
+
+      els.totalCount.textContent = `${state.vocab.length.toLocaleString()} words total`;
+      els.groupGrid.replaceChildren();
+
+      els.groupGrid.appendChild(createGroupButton({
+        title: "All words",
+        label: "Full deck",
+        description: "Study every word from every cluster in one complete deck.",
+        count: state.vocab.length,
+        group: "all",
+        isAll: true
+      }));
+
+      counts.forEach((count, cluster) => {
+        els.groupGrid.appendChild(createGroupButton({
+          title: getClusterName(cluster),
+          label: `Cluster ${String(cluster).padStart(2, "0")}`,
+          description: getClusterDescription(cluster),
+          count,
+          group: cluster
+        }));
+      });
+    }
+
+    function createGroupButton({ title, label, description = "", count, group, isAll = false }) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `group-card${isAll ? " all" : ""}`;
+      button.setAttribute("aria-label", `${title}, ${count.toLocaleString()} ${count === 1 ? "word" : "words"}`);
+
+      const eyebrow = document.createElement("span");
+      eyebrow.className = "cluster-number";
+      eyebrow.textContent = label;
+
+      const copy = document.createElement("span");
+      copy.className = "cluster-copy";
+
+      const heading = document.createElement("span");
+      heading.className = "cluster-title";
+      heading.textContent = title;
+      copy.appendChild(heading);
+
+      if (description) {
+        const subtitle = document.createElement("span");
+        subtitle.className = "cluster-desc";
+        subtitle.textContent = description;
+        copy.appendChild(subtitle);
+      }
+
+      const wordCount = document.createElement("span");
+      wordCount.className = "cluster-count";
+      wordCount.textContent = `${count.toLocaleString()} ${count === 1 ? "word" : "words"}`;
+
+      button.append(eyebrow, copy, wordCount);
+      button.addEventListener("click", () => startStudy(group));
+      return button;
+    }
+
+    function scheduleSearch() {
+      window.clearTimeout(searchDebounceId);
+
+      if (!els.searchInput.value.trim()) {
+        applySearch("");
+        return;
+      }
+
+      searchDebounceId = window.setTimeout(() => {
+        applySearch(els.searchInput.value);
+      }, SEARCH_DEBOUNCE_MS);
+    }
+
+    function applySearch(value) {
+      const query = value.trim();
+      state.searchQuery = query;
+
+      if (!query) {
+        state.searchResults = [];
+        state.highlightedSearchIndex = -1;
+        renderSearchState();
+        return;
+      }
+
+      state.searchResults = getSearchMatches(query);
+      state.highlightedSearchIndex = state.searchResults.length ? 0 : -1;
+      renderSearchState();
+    }
+
+    function getSearchMatches(query) {
+      const normalized = query.toLowerCase();
+
+      return state.searchIndex
+        .map(({ entry, wordText, defText }) => {
+          const wordIndex = wordText.indexOf(normalized);
+          const defIndex = defText.indexOf(normalized);
+
+          if (wordIndex === -1 && defIndex === -1) {
+            return null;
+          }
+
+          const rank = wordIndex === 0 ? 0 : wordIndex > 0 ? 1 : 2;
+          return { entry, rank, wordIndex, defIndex };
+        })
+        .filter(Boolean)
+        .sort((a, b) => {
+          if (a.rank !== b.rank) return a.rank - b.rank;
+          if (a.rank < 2 && a.wordIndex !== b.wordIndex) return a.wordIndex - b.wordIndex;
+          return a.entry.word.localeCompare(b.entry.word);
+        })
+        .map((match) => match.entry);
+    }
+
+    function renderSearchState() {
+      const hasQuery = Boolean(state.searchQuery);
+      els.groupGrid.classList.toggle("hidden", hasQuery);
+      els.searchResults.classList.toggle("hidden", !hasQuery);
+      els.searchList.replaceChildren();
+
+      if (!hasQuery) {
+        els.searchStatus.textContent = "";
+        els.searchInput.removeAttribute("aria-activedescendant");
+        renderBreadcrumbs();
+        return;
+      }
+
+      if (!state.searchResults.length) {
+        els.searchStatus.textContent = "0 matches.";
+        els.searchInput.removeAttribute("aria-activedescendant");
+        const empty = document.createElement("p");
+        empty.className = "empty-state";
+        empty.textContent = `No words match '${state.searchQuery}'.`;
+        els.searchList.appendChild(empty);
+        renderBreadcrumbs();
+        return;
+      }
+
+      const visibleResults = state.searchResults.slice(0, SEARCH_RESULT_LIMIT);
+      els.searchStatus.textContent = state.searchResults.length > SEARCH_RESULT_LIMIT
+        ? `Showing first ${SEARCH_RESULT_LIMIT} of ${state.searchResults.length.toLocaleString()} matches.`
+        : `${state.searchResults.length.toLocaleString()} ${state.searchResults.length === 1 ? "match" : "matches"}.`;
+
+      visibleResults.forEach((entry, index) => {
+        els.searchList.appendChild(createSearchResultButton(entry, index));
+      });
+
+      updateSearchHighlight(false);
+      renderBreadcrumbs();
+    }
+
+    function createSearchResultButton(entry, index) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.id = `search-result-${index}`;
+      button.className = `search-result${index === state.highlightedSearchIndex ? " is-highlighted" : ""}`;
+      button.setAttribute("role", "option");
+      button.setAttribute("aria-selected", String(index === state.highlightedSearchIndex));
+      button.setAttribute("aria-label", `${entry.word}, ${entry.pos || "part of speech unavailable"}`);
+
+      const wordWrap = document.createElement("span");
+      wordWrap.className = "result-word";
+
+      const name = document.createElement("span");
+      name.className = "result-name";
+      name.textContent = entry.word;
+
+      const pos = document.createElement("span");
+      pos.className = "result-pos";
+      pos.textContent = entry.pos || "pos unavailable";
+
+      const definition = document.createElement("p");
+      definition.className = "result-def";
+      definition.textContent = getDefinitionSnippet(entry, state.searchQuery);
+
+      wordWrap.append(name, pos);
+      button.append(wordWrap, definition);
+
+      button.addEventListener("click", () => openSearchResult(index));
+      button.addEventListener("focus", () => setHighlightedSearchIndex(index, false));
+      button.addEventListener("mouseenter", () => setHighlightedSearchIndex(index, false));
+      button.addEventListener("keydown", handleSearchResultKeydown);
+
+      return button;
+    }
+
+    function getDefinitionSnippet(entry, query) {
+      const definition = String(entry.def || "Definition unavailable.");
+      const normalized = query.toLowerCase();
+      const matchIndex = definition.toLowerCase().indexOf(normalized);
+      const maxLength = 140;
+
+      if (definition.length <= maxLength) {
+        return definition;
+      }
+
+      if (matchIndex === -1) {
+        return `${definition.slice(0, maxLength).trim()}...`;
+      }
+
+      const start = Math.max(0, matchIndex - 42);
+      const end = Math.min(definition.length, matchIndex + normalized.length + 86);
+      const prefix = start > 0 ? "..." : "";
+      const suffix = end < definition.length ? "..." : "";
+      return `${prefix}${definition.slice(start, end).trim()}${suffix}`;
+    }
+
+    function setHighlightedSearchIndex(index, shouldFocus) {
+      const visibleCount = Math.min(SEARCH_RESULT_LIMIT, state.searchResults.length);
+      if (!visibleCount) {
+        state.highlightedSearchIndex = -1;
+        updateSearchHighlight(false);
+        return;
+      }
+
+      state.highlightedSearchIndex = (index + visibleCount) % visibleCount;
+      updateSearchHighlight(shouldFocus);
+    }
+
+    function updateSearchHighlight(shouldFocus) {
+      const options = [...els.searchList.querySelectorAll(".search-result")];
+      options.forEach((option, index) => {
+        const selected = index === state.highlightedSearchIndex;
+        option.classList.toggle("is-highlighted", selected);
+        option.setAttribute("aria-selected", String(selected));
+      });
+
+      if (state.highlightedSearchIndex >= 0) {
+        const active = document.getElementById(`search-result-${state.highlightedSearchIndex}`);
+        els.searchInput.setAttribute("aria-activedescendant", `search-result-${state.highlightedSearchIndex}`);
+        if (shouldFocus && active) {
+          active.focus({ preventScroll: true });
+        }
+      } else {
+        els.searchInput.removeAttribute("aria-activedescendant");
+      }
+    }
+
+    function handleSearchInputKeydown(event) {
+      const isNavigationKey = event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "Enter";
+      if (!isNavigationKey) return;
+
+      const currentValue = els.searchInput.value.trim();
+      if (currentValue !== state.searchQuery) {
+        window.clearTimeout(searchDebounceId);
+        applySearch(currentValue);
+      }
+
+      if (!state.searchQuery || !state.searchResults.length) return;
+
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        setHighlightedSearchIndex(state.highlightedSearchIndex + 1, true);
+      }
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        setHighlightedSearchIndex(state.highlightedSearchIndex - 1, true);
+      }
+
+      if (event.key === "Enter") {
+        event.preventDefault();
+        openSearchResult(state.highlightedSearchIndex >= 0 ? state.highlightedSearchIndex : 0);
+      }
+    }
+
+    function handleSearchResultKeydown(event) {
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        setHighlightedSearchIndex(state.highlightedSearchIndex + 1, true);
+      }
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        setHighlightedSearchIndex(state.highlightedSearchIndex - 1, true);
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        els.searchInput.focus({ preventScroll: true });
+      }
+    }
+
+    function openSearchResult(index) {
+      const card = state.searchResults[index];
+      if (!card) return;
+
+      state.currentView = "study";
+      state.currentGroup = "search";
+      state.currentDeck = [...state.searchResults];
+      state.currentIndex = index;
+      state.flipped = false;
+      state.storyVisible = false;
+
+      els.home.classList.add("hidden");
+      els.study.classList.remove("hidden");
+      renderCard();
+      els.cardShell.focus({ preventScroll: true });
+    }
+
+    function openRandomWord() {
+      if (!state.vocab.length) return;
+
+      const randomIndex = Math.floor(Math.random() * state.vocab.length);
+      state.currentView = "study";
+      state.currentGroup = "random";
+      state.currentDeck = [state.vocab[randomIndex]];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+
+      els.home.classList.add("hidden");
+      els.study.classList.remove("hidden");
+      renderCard();
+      els.cardShell.focus({ preventScroll: true });
+    }
+
+    function startStudy(group) {
+      const deck = group === "all"
+        ? state.vocab
+        : state.vocab.filter((entry) => Number(entry.cluster) === Number(group));
+
+      state.currentView = "study";
+      state.currentGroup = group;
+      state.currentDeck = [...deck];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+
+      els.home.classList.add("hidden");
+      els.study.classList.remove("hidden");
+      renderCard();
+      els.cardShell.focus({ preventScroll: true });
+    }
+
+    function showHome({ preserveSearch = false, focusSearch = false } = {}) {
+      if (!state.vocab.length) return;
+
+      state.currentView = "home";
+      state.currentGroup = null;
+      state.currentDeck = [];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+
+      if (!preserveSearch) {
+        state.searchQuery = "";
+        state.searchResults = [];
+        state.highlightedSearchIndex = -1;
+        els.searchInput.value = "";
+      }
+
+      els.loading.classList.add("hidden");
+      els.error.classList.add("hidden");
+      els.study.classList.add("hidden");
+      els.home.classList.remove("hidden");
+      renderSearchState();
+
+      if (focusSearch && state.searchQuery) {
+        els.searchInput.focus({ preventScroll: true });
+      }
+    }
+
+    function handleBack() {
+      if (state.currentGroup === "search") {
+        showHome({ preserveSearch: true, focusSearch: true });
+        return;
+      }
+
+      showHome();
+    }
+
+    function renderStudyControls() {
+      const isClusterStudy = typeof state.currentGroup === "number";
+      els.clusterSwitchWrap.classList.toggle("hidden", !isClusterStudy);
+
+      if (isClusterStudy) {
+        els.clusterSelect.value = String(state.currentGroup);
+      }
+    }
+
+    function renderCard() {
+      const card = state.currentDeck[state.currentIndex];
+      if (!card) return;
+
+      const groupName = state.currentGroup === "all"
+        ? "All words"
+        : state.currentGroup === "search"
+          ? (state.searchQuery ? `Search: ${state.searchQuery}` : "Search results")
+          : state.currentGroup === "random"
+            ? "Random word"
+            : getClusterName(state.currentGroup);
+      const hasStory = Boolean(state.blurbs[card.word]);
+
+      els.studyTitle.textContent = groupName;
+      els.progress.textContent = `Card ${state.currentIndex + 1} of ${state.currentDeck.length}`;
+      els.word.textContent = card.word;
+      els.pos.textContent = card.pos || "part of speech unavailable";
+      els.definition.textContent = card.def || "Definition unavailable.";
+      els.sentence.textContent = card.sentence || "Example sentence unavailable.";
+
+      els.cardShell.classList.toggle("is-flipped", state.flipped);
+      els.cardShell.setAttribute("aria-pressed", String(state.flipped));
+      els.storyText.classList.toggle("hidden", !state.storyVisible);
+      els.storyText.textContent = state.storyVisible && hasStory ? state.blurbs[card.word] : "";
+
+      els.storyButton.disabled = !hasStory;
+      els.storyButton.textContent = hasStory
+        ? (state.storyVisible ? "Hide story" : "Show story")
+        : "No story yet";
+
+      els.previousButton.disabled = state.currentDeck.length <= 1;
+      els.nextButton.disabled = state.currentDeck.length <= 1;
+      els.shuffleButton.disabled = state.currentDeck.length <= 1;
+      renderStudyControls();
+      renderBreadcrumbs();
+    }
+
+    function flipCard() {
+      state.flipped = !state.flipped;
+      renderCard();
+    }
+
+    function moveCard(direction) {
+      if (!state.currentDeck.length) return;
+      const total = state.currentDeck.length;
+      state.currentIndex = (state.currentIndex + direction + total) % total;
+      state.flipped = false;
+      state.storyVisible = false;
+      renderCard();
+    }
+
+    function shuffleDeck() {
+      for (let index = state.currentDeck.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [state.currentDeck[index], state.currentDeck[randomIndex]] = [state.currentDeck[randomIndex], state.currentDeck[index]];
+      }
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+      renderCard();
+    }
+
+    function toggleStory(event) {
+      event.stopPropagation();
+      const card = state.currentDeck[state.currentIndex];
+      if (!card || !state.blurbs[card.word]) return;
+      state.storyVisible = !state.storyVisible;
+      renderCard();
+    }
+
+    els.homeButton.addEventListener("click", () => showHome());
+    els.cardShell.addEventListener("click", flipCard);
+    els.backButton.addEventListener("click", handleBack);
+    els.shuffleButton.addEventListener("click", shuffleDeck);
+    els.previousButton.addEventListener("click", () => moveCard(-1));
+    els.flipButton.addEventListener("click", flipCard);
+    els.nextButton.addEventListener("click", () => moveCard(1));
+    els.storyButton.addEventListener("click", toggleStory);
+    els.randomButton.addEventListener("click", openRandomWord);
+    els.clusterSelect.addEventListener("change", () => startStudy(Number(els.clusterSelect.value)));
+    els.searchInput.addEventListener("input", scheduleSearch);
+    els.searchInput.addEventListener("keydown", handleSearchInputKeydown);
+
+    document.addEventListener("keydown", (event) => {
+      if (els.study.classList.contains("hidden")) return;
+
+      const activeTag = document.activeElement ? document.activeElement.tagName : "";
+      const isTyping = activeTag === "INPUT" || activeTag === "TEXTAREA" || activeTag === "SELECT";
+      if (isTyping) return;
+      if ((event.key === " " || event.key === "Enter") && activeTag === "BUTTON") return;
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        moveCard(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        moveCard(1);
+      }
+
+      if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        flipCard();
+      }
+    });
+
+    init();
+  </script>
+</body>
+</html>
