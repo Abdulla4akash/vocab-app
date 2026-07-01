@@ -529,6 +529,65 @@
       font-weight: 600;
     }
 
+    .drill-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-panel);
+      box-shadow: var(--small-shadow);
+    }
+
+    .drill-stats {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .drill-stat {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .drill-stat strong {
+      color: var(--text);
+      font-size: 1.18rem;
+      line-height: 1;
+    }
+
+    .drill-tally {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .new-best {
+      padding: 3px 8px;
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .drill-reset {
+      flex: 0 0 auto;
+      min-height: 36px;
+      padding: 0 12px;
+      font-size: 0.85rem;
+    }
+
     .card-stage {
       perspective: 1400px;
     }
@@ -775,6 +834,15 @@
         flex-wrap: wrap;
       }
 
+      .drill-panel {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .drill-reset {
+        width: fit-content;
+      }
+
       .home-actions,
       .study-actions {
         justify-content: start;
@@ -879,6 +947,16 @@
         </div>
       </div>
 
+      <section id="drillPanel" class="drill-panel hidden" aria-label="Random word drill stats">
+        <div class="drill-stats">
+          <span class="drill-stat">Current <strong id="currentStreak">0</strong></span>
+          <span class="drill-stat">Best <strong id="bestStreak">0</strong></span>
+          <span id="newBestIndicator" class="new-best hidden">New best!</span>
+          <p id="sessionTally" class="drill-tally">0 got · 0 missed · 0%</p>
+        </div>
+        <button id="resetStatsButton" class="button ghost drill-reset" type="button">Reset stats</button>
+      </section>
+
       <div class="card-stage">
         <div id="cardShell" class="card-shell" role="button" tabindex="0" aria-label="Flip flashcard">
           <article class="flashcard">
@@ -915,6 +993,8 @@
         <button id="previousButton" class="button" type="button">Previous</button>
         <button id="flipButton" class="button primary" type="button">Flip</button>
         <button id="nextButton" class="button" type="button">Next</button>
+        <button id="gotButton" class="button primary hidden" type="button" disabled>Got it</button>
+        <button id="missedButton" class="button hidden" type="button" disabled>Missed it</button>
       </nav>
     </section>
   </main>
@@ -926,9 +1006,11 @@
     const SEARCH_RESULT_LIMIT = 50;
     const SEARCH_DEBOUNCE_MS = 150;
     const SWIPE_THRESHOLD_PX = 50;
+    const BEST_STREAK_STORAGE_KEY = "maXvocab.bestStreak";
 
     let searchDebounceId = null;
     let swipeAnimationId = null;
+    let newBestFlashId = null;
 
     const touchGesture = {
       startX: 0,
@@ -954,6 +1036,15 @@
       currentGroup: null,
       currentCluster: null,
       currentStudyGroup: null,
+      drill: {
+        bag: [],
+        currentStreak: 0,
+        bestStreak: 0,
+        got: 0,
+        missed: 0,
+        dealt: 0,
+        newBestVisible: false
+      },
       flipped: false,
       storyVisible: false
     };
@@ -976,6 +1067,12 @@
       randomButton: document.querySelector("#randomButton"),
       studyTitle: document.querySelector("#studyTitle"),
       progress: document.querySelector("#progress"),
+      drillPanel: document.querySelector("#drillPanel"),
+      currentStreak: document.querySelector("#currentStreak"),
+      bestStreak: document.querySelector("#bestStreak"),
+      newBestIndicator: document.querySelector("#newBestIndicator"),
+      sessionTally: document.querySelector("#sessionTally"),
+      resetStatsButton: document.querySelector("#resetStatsButton"),
       clusterSwitchWrap: document.querySelector("#clusterSwitchWrap"),
       clusterSelect: document.querySelector("#clusterSelect"),
       cardShell: document.querySelector("#cardShell"),
@@ -989,7 +1086,9 @@
       shuffleButton: document.querySelector("#shuffleButton"),
       previousButton: document.querySelector("#previousButton"),
       flipButton: document.querySelector("#flipButton"),
-      nextButton: document.querySelector("#nextButton")
+      nextButton: document.querySelector("#nextButton"),
+      gotButton: document.querySelector("#gotButton"),
+      missedButton: document.querySelector("#missedButton")
     };
 
     async function fetchJson(path) {
@@ -1103,6 +1202,71 @@
       const lastWord = group.words[group.words.length - 1]?.word || "";
       if (!firstWord) return "";
       return firstWord === lastWord ? firstWord : `${firstWord} to ${lastWord}`;
+    }
+
+    function isRandomDrill() {
+      return state.currentGroup === "random";
+    }
+
+    function readSavedBestStreak() {
+      try {
+        const value = Number.parseInt(localStorage.getItem(BEST_STREAK_STORAGE_KEY), 10);
+        return Number.isFinite(value) && value > 0 ? value : 0;
+      } catch (error) {
+        return 0;
+      }
+    }
+
+    function saveBestStreak(value) {
+      try {
+        localStorage.setItem(BEST_STREAK_STORAGE_KEY, String(Math.max(0, value)));
+      } catch (error) {
+        // Best streak still updates in memory if browser storage is unavailable.
+      }
+    }
+
+    function clearSavedBestStreak() {
+      try {
+        localStorage.removeItem(BEST_STREAK_STORAGE_KEY);
+      } catch (error) {
+        // Resetting the in-memory stats is enough when storage is unavailable.
+      }
+    }
+
+    function resetDrillSession({ resetBest = false } = {}) {
+      window.clearTimeout(newBestFlashId);
+      state.drill.bag = [];
+      state.drill.currentStreak = 0;
+      state.drill.bestStreak = resetBest ? 0 : readSavedBestStreak();
+      state.drill.got = 0;
+      state.drill.missed = 0;
+      state.drill.dealt = 0;
+      state.drill.newBestVisible = false;
+    }
+
+    function refillDrillBag() {
+      state.drill.bag = [...state.vocab];
+      shuffleEntries(state.drill.bag);
+    }
+
+    function drawDrillCard() {
+      if (!state.drill.bag.length) {
+        refillDrillBag();
+      }
+
+      state.drill.dealt += 1;
+      return state.drill.bag.pop();
+    }
+
+    function showNewBest() {
+      window.clearTimeout(newBestFlashId);
+      state.drill.newBestVisible = true;
+      renderDrillPanel();
+
+      newBestFlashId = window.setTimeout(() => {
+        state.drill.newBestVisible = false;
+        renderDrillPanel();
+      }, 1300);
     }
 
     function renderClusterOptions() {
@@ -1512,18 +1676,63 @@
     function openRandomWord() {
       if (!state.vocab.length) return;
 
-      const randomIndex = Math.floor(Math.random() * state.vocab.length);
+      resetDrillSession();
       state.currentView = "study";
       state.currentGroup = "random";
       state.currentCluster = null;
       state.currentStudyGroup = null;
-      state.currentDeck = [state.vocab[randomIndex]];
+      state.currentDeck = [drawDrillCard()];
       state.currentIndex = 0;
       state.flipped = false;
       state.storyVisible = false;
 
       els.home.classList.add("hidden");
       els.study.classList.remove("hidden");
+      renderCard();
+      els.cardShell.focus({ preventScroll: true });
+    }
+
+    function advanceRandomDrill() {
+      state.currentDeck = [drawDrillCard()];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+      renderCard();
+      els.cardShell.focus({ preventScroll: true });
+    }
+
+    function recordDrillResult(wasCorrect) {
+      if (!isRandomDrill() || !state.flipped) return;
+
+      if (wasCorrect) {
+        state.drill.got += 1;
+        state.drill.currentStreak += 1;
+
+        if (state.drill.currentStreak > state.drill.bestStreak) {
+          state.drill.bestStreak = state.drill.currentStreak;
+          saveBestStreak(state.drill.bestStreak);
+          showNewBest();
+        }
+      } else {
+        state.drill.missed += 1;
+        state.drill.currentStreak = 0;
+      }
+
+      advanceRandomDrill();
+    }
+
+    function resetDrillStats() {
+      if (!isRandomDrill()) return;
+
+      const confirmed = window.confirm("Reset streak stats for this drill?");
+      if (!confirmed) return;
+
+      clearSavedBestStreak();
+      resetDrillSession({ resetBest: true });
+      state.currentDeck = [drawDrillCard()];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
       renderCard();
       els.cardShell.focus({ preventScroll: true });
     }
@@ -1634,13 +1843,42 @@
       showHome();
     }
 
+    function getDrillTallyLabel() {
+      const total = state.drill.got + state.drill.missed;
+      const percentage = total ? Math.round((state.drill.got / total) * 100) : 0;
+      return `${state.drill.got} got · ${state.drill.missed} missed · ${percentage}%`;
+    }
+
+    function renderDrillPanel() {
+      const isDrill = isRandomDrill();
+      els.drillPanel.classList.toggle("hidden", !isDrill);
+      els.gotButton.classList.toggle("hidden", !isDrill);
+      els.missedButton.classList.toggle("hidden", !isDrill);
+
+      if (!isDrill) return;
+
+      const canRate = state.flipped;
+      els.currentStreak.textContent = String(state.drill.currentStreak);
+      els.bestStreak.textContent = String(state.drill.bestStreak);
+      els.sessionTally.textContent = getDrillTallyLabel();
+      els.newBestIndicator.classList.toggle("hidden", !state.drill.newBestVisible);
+      els.gotButton.disabled = !canRate;
+      els.missedButton.disabled = !canRate;
+    }
+
     function renderStudyControls() {
+      const isDrill = isRandomDrill();
       const isClusterStudy = typeof state.currentGroup === "number";
       els.clusterSwitchWrap.classList.toggle("hidden", !isClusterStudy);
+      els.shuffleButton.classList.toggle("hidden", isDrill);
+      els.previousButton.classList.toggle("hidden", isDrill);
+      els.nextButton.classList.toggle("hidden", isDrill);
 
       if (isClusterStudy) {
         els.clusterSelect.value = String(state.currentGroup);
       }
+
+      renderDrillPanel();
     }
 
     function renderCard() {
@@ -1652,14 +1890,16 @@
         : state.currentGroup === "search"
           ? (state.searchQuery ? `Search: ${state.searchQuery}` : "Search results")
           : state.currentGroup === "random"
-            ? "Random word"
+            ? "Random word drill"
             : state.currentStudyGroup
               ? getStudyGroupTitle(state.currentStudyGroup)
               : getClusterName(state.currentGroup);
       const hasStory = Boolean(state.blurbs[card.word]);
 
       els.studyTitle.textContent = groupName;
-      els.progress.textContent = `Card ${state.currentIndex + 1} of ${state.currentDeck.length}`;
+      els.progress.textContent = isRandomDrill()
+        ? `Card ${state.drill.dealt}`
+        : `Card ${state.currentIndex + 1} of ${state.currentDeck.length}`;
       els.word.textContent = card.word;
       els.pos.textContent = card.pos || "part of speech unavailable";
       els.definition.textContent = card.def || "Definition unavailable.";
@@ -1700,7 +1940,9 @@
 
     function moveCard(direction) {
       if (!state.currentDeck.length) return;
+      if (isRandomDrill()) return;
       const total = state.currentDeck.length;
+      if (total <= 1) return;
       state.currentIndex = (state.currentIndex + direction + total) % total;
       state.flipped = false;
       state.storyVisible = false;
@@ -1783,11 +2025,17 @@
       }, 220);
     }
 
-    function shuffleDeck() {
-      for (let index = state.currentDeck.length - 1; index > 0; index -= 1) {
+    function shuffleEntries(entries) {
+      for (let index = entries.length - 1; index > 0; index -= 1) {
         const randomIndex = Math.floor(Math.random() * (index + 1));
-        [state.currentDeck[index], state.currentDeck[randomIndex]] = [state.currentDeck[randomIndex], state.currentDeck[index]];
+        [entries[index], entries[randomIndex]] = [entries[randomIndex], entries[index]];
       }
+    }
+
+    function shuffleDeck() {
+      if (isRandomDrill()) return;
+
+      shuffleEntries(state.currentDeck);
       state.currentIndex = 0;
       state.flipped = false;
       state.storyVisible = false;
@@ -1822,6 +2070,9 @@
     els.nextButton.addEventListener("click", () => moveCard(1));
     els.storyButton.addEventListener("click", toggleStory);
     els.randomButton.addEventListener("click", openRandomWord);
+    els.gotButton.addEventListener("click", () => recordDrillResult(true));
+    els.missedButton.addEventListener("click", () => recordDrillResult(false));
+    els.resetStatsButton.addEventListener("click", resetDrillStats);
     els.clusterSelect.addEventListener("change", () => showClusterGroups(Number(els.clusterSelect.value)));
     els.searchInput.addEventListener("input", scheduleSearch);
     els.searchInput.addEventListener("keydown", handleSearchInputKeydown);
