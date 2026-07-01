@@ -843,7 +843,7 @@
       <div class="home-header">
         <div>
           <h2 id="homeTitle">Choose a group</h2>
-          <p class="subtitle">Pick a named cluster or study the full deck.</p>
+          <p id="homeSubtitle" class="subtitle">Pick a named cluster or study the full deck.</p>
         </div>
         <div class="home-actions">
           <p id="totalCount" class="total-count"></p>
@@ -921,6 +921,8 @@
 
   <script>
     const CLUSTER_COUNT = 32;
+    const STUDY_GROUP_SIZE = 20;
+    const SMALL_FINAL_GROUP_THRESHOLD = 7;
     const SEARCH_RESULT_LIMIT = 50;
     const SEARCH_DEBOUNCE_MS = 150;
     const SWIPE_THRESHOLD_PX = 50;
@@ -941,6 +943,7 @@
       vocab: [],
       blurbs: {},
       clusters: {},
+      studyGroupsByCluster: {},
       searchIndex: [],
       searchQuery: "",
       searchResults: [],
@@ -949,6 +952,8 @@
       currentDeck: [],
       currentIndex: 0,
       currentGroup: null,
+      currentCluster: null,
+      currentStudyGroup: null,
       flipped: false,
       storyVisible: false
     };
@@ -958,6 +963,8 @@
       error: document.querySelector("#error"),
       home: document.querySelector("#home"),
       study: document.querySelector("#study"),
+      homeTitle: document.querySelector("#homeTitle"),
+      homeSubtitle: document.querySelector("#homeSubtitle"),
       homeButton: document.querySelector("#homeButton"),
       breadcrumbs: document.querySelector("#breadcrumbs"),
       searchInput: document.querySelector("#searchInput"),
@@ -1014,9 +1021,9 @@
           .sort((a, b) => a.word.localeCompare(b.word));
         state.blurbs = blurbData || {};
         state.clusters = clusterData || {};
+        buildStudyGroups();
         buildSearchIndex();
 
-        renderGroups();
         renderClusterOptions();
         showHome();
       } catch (error) {
@@ -1038,6 +1045,33 @@
       }));
     }
 
+    function buildStudyGroups() {
+      state.studyGroupsByCluster = {};
+
+      for (let cluster = 0; cluster < CLUSTER_COUNT; cluster += 1) {
+        const clusterWords = state.vocab
+          .filter((entry) => Number(entry.cluster) === cluster)
+          .sort((a, b) => a.word.localeCompare(b.word));
+        const chunks = [];
+
+        for (let index = 0; index < clusterWords.length; index += STUDY_GROUP_SIZE) {
+          chunks.push(clusterWords.slice(index, index + STUDY_GROUP_SIZE));
+        }
+
+        if (chunks.length > 1 && chunks[chunks.length - 1].length <= SMALL_FINAL_GROUP_THRESHOLD) {
+          chunks[chunks.length - 2].push(...chunks.pop());
+        }
+
+        state.studyGroupsByCluster[cluster] = chunks.map((words, index) => ({
+          cluster,
+          groupNumber: index + 1,
+          totalGroups: chunks.length,
+          label: `C${cluster}G${index + 1}`,
+          words
+        }));
+      }
+    }
+
     function getClusterName(cluster) {
       const meta = state.clusters[String(cluster)] || {};
       return typeof meta.name === "string" && meta.name.trim()
@@ -1050,6 +1084,25 @@
       return typeof meta.desc === "string" && meta.desc.trim()
         ? meta.desc.trim()
         : "";
+    }
+
+    function getClusterStudyGroups(cluster) {
+      return state.studyGroupsByCluster[Number(cluster)] || [];
+    }
+
+    function getWordCountLabel(count) {
+      return `${count.toLocaleString()} ${count === 1 ? "word" : "words"}`;
+    }
+
+    function getStudyGroupTitle(group) {
+      return `${getClusterName(group.cluster)} — Group ${group.groupNumber} of ${group.totalGroups}`;
+    }
+
+    function getStudyGroupDescription(group) {
+      const firstWord = group.words[0]?.word || "";
+      const lastWord = group.words[group.words.length - 1]?.word || "";
+      if (!firstWord) return "";
+      return firstWord === lastWord ? firstWord : `${firstWord} to ${lastWord}`;
     }
 
     function renderClusterOptions() {
@@ -1082,6 +1135,16 @@
         return;
       }
 
+      if (state.currentView === "cluster" && state.searchQuery) {
+        addSegment("Search", () => els.searchInput.focus({ preventScroll: true }));
+        return;
+      }
+
+      if (state.currentView === "cluster") {
+        addSegment(getClusterName(state.currentCluster), () => showClusterGroups(state.currentCluster));
+        return;
+      }
+
       if (state.currentView !== "study") return;
 
       if (state.currentGroup === "search") {
@@ -1099,7 +1162,14 @@
         return;
       }
 
-      addSegment(getClusterName(state.currentGroup), () => {});
+      if (state.currentStudyGroup) {
+        const group = state.currentStudyGroup;
+        addSegment(getClusterName(group.cluster), () => showClusterGroups(group.cluster), false);
+        addSegment(`Group ${group.groupNumber} of ${group.totalGroups}`, () => {});
+        return;
+      }
+
+      addSegment(getClusterName(state.currentGroup), () => showClusterGroups(state.currentGroup));
     }
 
     function createBreadcrumbButton(label, action, isCurrent = false) {
@@ -1114,11 +1184,13 @@
       return button;
     }
 
-    function renderGroups() {
+    function renderHomeGroups() {
       const counts = Array.from({ length: CLUSTER_COUNT }, (_, cluster) =>
         state.vocab.filter((entry) => Number(entry.cluster) === cluster).length
       );
 
+      els.homeTitle.textContent = "Choose a cluster";
+      els.homeSubtitle.textContent = "Pick a named cluster or study the full deck.";
       els.totalCount.textContent = `${state.vocab.length.toLocaleString()} words total`;
       els.groupGrid.replaceChildren();
 
@@ -1127,8 +1199,8 @@
         label: "Full deck",
         description: "Study every word from every cluster in one complete deck.",
         count: state.vocab.length,
-        group: "all",
-        isAll: true
+        isAll: true,
+        onClick: () => startStudy("all")
       }));
 
       counts.forEach((count, cluster) => {
@@ -1137,16 +1209,36 @@
           label: `Cluster ${String(cluster).padStart(2, "0")}`,
           description: getClusterDescription(cluster),
           count,
-          group: cluster
+          onClick: () => showClusterGroups(cluster)
         }));
       });
     }
 
-    function createGroupButton({ title, label, description = "", count, group, isAll = false }) {
+    function renderClusterGroups(cluster) {
+      const groups = getClusterStudyGroups(cluster);
+      const totalWords = groups.reduce((sum, group) => sum + group.words.length, 0);
+
+      els.homeTitle.textContent = getClusterName(cluster);
+      els.homeSubtitle.textContent = getClusterDescription(cluster) || "Choose a study group from this cluster.";
+      els.totalCount.textContent = `${getWordCountLabel(totalWords)} in ${groups.length} ${groups.length === 1 ? "group" : "groups"}`;
+      els.groupGrid.replaceChildren();
+
+      groups.forEach((group) => {
+        els.groupGrid.appendChild(createGroupButton({
+          title: getStudyGroupTitle(group),
+          label: group.label,
+          description: getStudyGroupDescription(group),
+          count: group.words.length,
+          onClick: () => startStudyGroup(group)
+        }));
+      });
+    }
+
+    function createGroupButton({ title, label, description = "", count, isAll = false, onClick }) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = `group-card${isAll ? " all" : ""}`;
-      button.setAttribute("aria-label", `${title}, ${count.toLocaleString()} ${count === 1 ? "word" : "words"}`);
+      button.setAttribute("aria-label", `${title}, ${getWordCountLabel(count)}`);
 
       const eyebrow = document.createElement("span");
       eyebrow.className = "cluster-number";
@@ -1169,10 +1261,10 @@
 
       const wordCount = document.createElement("span");
       wordCount.className = "cluster-count";
-      wordCount.textContent = `${count.toLocaleString()} ${count === 1 ? "word" : "words"}`;
+      wordCount.textContent = getWordCountLabel(count);
 
       button.append(eyebrow, copy, wordCount);
-      button.addEventListener("click", () => startStudy(group));
+      button.addEventListener("click", onClick);
       return button;
     }
 
@@ -1404,6 +1496,8 @@
 
       state.currentView = "study";
       state.currentGroup = "search";
+      state.currentCluster = null;
+      state.currentStudyGroup = null;
       state.currentDeck = [...state.searchResults];
       state.currentIndex = index;
       state.flipped = false;
@@ -1421,6 +1515,8 @@
       const randomIndex = Math.floor(Math.random() * state.vocab.length);
       state.currentView = "study";
       state.currentGroup = "random";
+      state.currentCluster = null;
+      state.currentStudyGroup = null;
       state.currentDeck = [state.vocab[randomIndex]];
       state.currentIndex = 0;
       state.flipped = false;
@@ -1439,7 +1535,25 @@
 
       state.currentView = "study";
       state.currentGroup = group;
+      state.currentCluster = typeof group === "number" ? group : null;
+      state.currentStudyGroup = null;
       state.currentDeck = [...deck];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+
+      els.home.classList.add("hidden");
+      els.study.classList.remove("hidden");
+      renderCard();
+      els.cardShell.focus({ preventScroll: true });
+    }
+
+    function startStudyGroup(group) {
+      state.currentView = "study";
+      state.currentGroup = group.cluster;
+      state.currentCluster = group.cluster;
+      state.currentStudyGroup = group;
+      state.currentDeck = [...group.words];
       state.currentIndex = 0;
       state.flipped = false;
       state.storyVisible = false;
@@ -1455,6 +1569,8 @@
 
       state.currentView = "home";
       state.currentGroup = null;
+      state.currentCluster = null;
+      state.currentStudyGroup = null;
       state.currentDeck = [];
       state.currentIndex = 0;
       state.flipped = false;
@@ -1471,6 +1587,7 @@
       els.error.classList.add("hidden");
       els.study.classList.add("hidden");
       els.home.classList.remove("hidden");
+      renderHomeGroups();
       renderSearchState();
 
       if (focusSearch && state.searchQuery) {
@@ -1478,9 +1595,39 @@
       }
     }
 
+    function showClusterGroups(cluster) {
+      if (!state.vocab.length) return;
+
+      const clusterNumber = Number(cluster);
+      state.currentView = "cluster";
+      state.currentGroup = null;
+      state.currentCluster = clusterNumber;
+      state.currentStudyGroup = null;
+      state.currentDeck = [];
+      state.currentIndex = 0;
+      state.flipped = false;
+      state.storyVisible = false;
+      state.searchQuery = "";
+      state.searchResults = [];
+      state.highlightedSearchIndex = -1;
+      els.searchInput.value = "";
+
+      els.loading.classList.add("hidden");
+      els.error.classList.add("hidden");
+      els.study.classList.add("hidden");
+      els.home.classList.remove("hidden");
+      renderClusterGroups(clusterNumber);
+      renderSearchState();
+    }
+
     function handleBack() {
       if (state.currentGroup === "search") {
         showHome({ preserveSearch: true, focusSearch: true });
+        return;
+      }
+
+      if (state.currentStudyGroup) {
+        showClusterGroups(state.currentStudyGroup.cluster);
         return;
       }
 
@@ -1506,7 +1653,9 @@
           ? (state.searchQuery ? `Search: ${state.searchQuery}` : "Search results")
           : state.currentGroup === "random"
             ? "Random word"
-            : getClusterName(state.currentGroup);
+            : state.currentStudyGroup
+              ? getStudyGroupTitle(state.currentStudyGroup)
+              : getClusterName(state.currentGroup);
       const hasStory = Boolean(state.blurbs[card.word]);
 
       els.studyTitle.textContent = groupName;
@@ -1673,7 +1822,7 @@
     els.nextButton.addEventListener("click", () => moveCard(1));
     els.storyButton.addEventListener("click", toggleStory);
     els.randomButton.addEventListener("click", openRandomWord);
-    els.clusterSelect.addEventListener("change", () => startStudy(Number(els.clusterSelect.value)));
+    els.clusterSelect.addEventListener("change", () => showClusterGroups(Number(els.clusterSelect.value)));
     els.searchInput.addEventListener("input", scheduleSearch);
     els.searchInput.addEventListener("keydown", handleSearchInputKeydown);
 
