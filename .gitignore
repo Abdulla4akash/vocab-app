@@ -6,3 +6,4 @@ clustered_wordsv2.xlsx
 # python / scripts (optional — keep local only if you prefer)
 __pycache__/
 *.pyc
+.DS_Store

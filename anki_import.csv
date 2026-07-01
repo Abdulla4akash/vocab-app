@@ -2597,8 +2597,7 @@ largess or largesse,<b>noun</b><br>Generosity in bestowing money or gifts upon o
 laudable,<b>adj.</b><br>Deserving praise and commendation.<br><br><i>The charity's laudable efforts provided food for thousands of homeless families.</i>,cluster::19
 levity,"<b>noun</b><br>Humor or lack of seriousness, especially during a serious occasion.<br><br><i>The comedian's levity provided a welcome break from the somber ceremony.</i>",cluster::19
 livid,<b>adj.</b><br>furiously angry<br><br><i>She was livid when she discovered that her flight had been canceled.</i>,cluster::19
-"machination or
-machinations",<b></b><br><br><br><i></i>,cluster::19
+machination,<b></b><br><br><br><i></i>,cluster::19
 machination or machinations,<b>noun</b><br>A plot or scheme (singular or plural).<br><br><i>The detective unraveled the machination or machinations behind the crime.</i>,cluster::19
 malleable,<b>adj.</b><br>capable of being shaped or bent; easily influenced or adaptable.<br><br><i>Gold is a malleable metal that can be hammered into thin sheets.</i>,cluster::19
 mendicant,"<b>noun</b><br>A beggar, especially one who lives by begging.<br><br><i>The mendicant sat by the temple steps, asking for alms.</i>",cluster::19
@@ -3744,7 +3743,6 @@ juncture,"<b>noun</b><br>A particular point in events or time; a critical moment
 laceration,<b>noun</b><br>A deep cut or tear in skin or flesh.<br><br><i>The doctor stitched the laceration on his arm.</i>,cluster::31
 liquidation,<b>noun</b><br>the process of closing a business and selling its assets<br><br><i>The company faced liquidation after failing to pay its debts.</i>,cluster::31
 litigation,<b>noun</b><br>the process of taking legal action<br><br><i>The dispute ended in litigation that lasted for years.</i>,cluster::31
-machination,"<b>noun</b><br>A plot or scheme, especially one devised to cause harm.<br><br><i>The villain's machination to overthrow the government was foiled by the hero.</i>",cluster::31
 machinations,"<b>noun</b><br>Plots or schemes, especially complex and underhanded ones.<br><br><i>The boardroom was rife with machinations as executives vied for power.</i>",cluster::31
 malediction,<b>noun</b><br>A curse or the utterance of a curse.<br><br><i>The witch's malediction doomed the prince to eternal sleep.</i>,cluster::31
 malnutrition,<b>noun</b><br>a condition resulting from inadequate or unbalanced intake of nutrients.<br><br><i>The famine led to widespread malnutrition among children.</i>,cluster::31
@@ -3810,3 +3808,235 @@ vituperation,<b>noun</b><br>bitter and abusive language.<br><br><i>The debate de
 vivisection,<b>noun</b><br>the practice of performing operations on live animals for scientific research.<br><br><i>Many animal rights groups oppose vivisection.</i>,cluster::31
 vocation,<b>noun</b><br>a strong feeling of suitability for a particular career or occupation.<br><br><i>Teaching is not just a job but a vocation for her.</i>,cluster::31
 volition,<b>noun</b><br>the faculty or power of using one's will.<br><br><i>She left the company of her own volition.</i>,cluster::31
+abase,"<b>verb</b><br>To lower in rank, prestige, or esteem; to humble or degrade.<br><br><i>The dictator's cruel policies sought to abase the citizens and strip them of their dignity.</i>",cluster::32
+abash,"<b>verb</b><br>To cause to feel embarrassed, disconcerted, or ashamed.<br><br><i>The unexpected compliment from her rival seemed to abash her rather than please her.</i>",cluster::32
+abnegate,"<b>verb</b><br>To renounce or reject something, especially a belief, claim, or right.<br><br><i>The monk chose to abnegate all worldly possessions in pursuit of spiritual enlightenment.</i>",cluster::32
+abnegation,"<b>noun</b><br>The act of renouncing or rejecting something, such as a belief or desire.<br><br><i>Her abnegation of credit for the project's success surprised everyone but demonstrated her humility.</i>",cluster::32
+abominate,<b>verb</b><br>To detest thoroughly; to loathe or abhor.<br><br><i>The environmental activist abominated the practice of dumping toxic waste into rivers.</i>,cluster::32
+acclimate,<b>verb</b><br>To become accustomed to a new climate or environment; to adapt.<br><br><i>It took the new employees several weeks to acclimate to the fast-paced work culture.</i>,cluster::32
+acculturate,<b>verb</b><br>To assimilate or cause to adopt the cultural traits of another group.<br><br><i>Immigrants often acculturate to their new country while preserving elements of their native culture.</i>,cluster::32
+acculturation,<b>noun</b><br>The process of cultural exchange and adaptation that occurs when different cultural groups come into contact.<br><br><i>The acculturation of the indigenous population was accelerated by the introduction of formal education.</i>,cluster::32
+acquiescence,<b>noun</b><br>Passive acceptance or submission to something without protest.<br><br><i>The board's acquiescence to the CEO's controversial plan surprised many shareholders.</i>,cluster::32
+acuity,"<b>noun</b><br>Sharpness or keenness of thought, vision, or hearing.<br><br><i>Her mental acuity remained sharp even in her nineties, allowing her to solve complex puzzles.</i>",cluster::32
+adage,"<b>noun</b><br>A short, memorable saying that expresses a general truth or piece of advice.<br><br><i>The old adage 'A stitch in time saves nine' reminds us of the value of prompt action.</i>",cluster::32
+adduce,<b>verb</b><br>To cite as evidence or proof in an argument.<br><br><i>The lawyer adduced several precedents to support her case before the judge.</i>,cluster::32
+adjure,"<b>verb</b><br>To earnestly command or urge someone to do something, often in a solemn manner.<br><br><i>The general adjured his troops to hold the line at all costs.</i>",cluster::32
+adumbrate,<b>verb</b><br>To outline or sketch broadly; to foreshadow or give a vague indication of something.<br><br><i>The preliminary report adumbrated the main findings of the research before its publication.</i>,cluster::32
+adventitious,"<b>adj.</b><br>Accidental or arising from an external cause, not inherent or natural.<br><br><i>The adventitious discovery of penicillin revolutionized medicine.</i>",cluster::32
+agnostic,<b>adj.</b><br>Relating to the belief that it is impossible to know whether God or gods exist.<br><br><i>Her agnostic stance meant she neither affirmed nor denied the existence of a deity.</i>,cluster::32
+agrarian,"<b>adj.</b><br>Relating to land cultivation, agriculture, or rural life.<br><br><i>The agrarian reforms aimed to redistribute land to small farmers.</i>",cluster::32
+allegorical,<b>adj.</b><br>Using symbolic characters or events to convey a hidden moral or political meaning.<br><br><i>The novel 'Animal Farm' is an allegorical critique of totalitarianism.</i>,cluster::32
+allegory,"<b>noun</b><br>A story, poem, or picture that can be interpreted to reveal a hidden meaning, typically a moral or political one.<br><br><i>Plato's Allegory of the Cave illustrates the journey from ignorance to enlightenment.</i>",cluster::32
+alliteration,<b>noun</b><br>The repetition of the same initial sound in a series of words or syllables.<br><br><i>The phrase 'Peter Piper picked a peck of pickled peppers' is a classic example of alliteration.</i>,cluster::32
+altercation,"<b>noun</b><br>A noisy argument or disagreement, often involving a conflict.<br><br><i>The altercation between the two drivers escalated into a shouting match on the street.</i>",cluster::32
+amass,"<b>verb</b><br>To gather or accumulate a large quantity of something over time.<br><br><i>Over the years, the collector managed to amass a vast collection of rare stamps.</i>",cluster::32
+ambit,"<b>noun</b><br>The scope, extent, or bounds of something.<br><br><i>The new regulations fall within the ambit of environmental protection laws.</i>",cluster::32
+analogy,"<b>noun</b><br>A comparison between two things, typically for the purpose of explanation or clarification.<br><br><i>The teacher used an analogy comparing the cell to a factory to explain its functions.</i>",cluster::32
+antagonism,<b>noun</b><br>Active hostility or opposition between individuals or groups.<br><br><i>The historical antagonism between the two nations finally gave way to diplomatic relations.</i>,cluster::32
+antagonist,"<b>noun</b><br>A person who actively opposes or is hostile to someone or something; an adversary.<br><br><i>In the novel, the antagonist is a corrupt politician who plots against the hero.</i>",cluster::32
+antiquity,"<b>noun</b><br>The ancient past, especially the period of classical civilization.<br><br><i>Scholars of antiquity study artifacts from ancient Greece and Rome.</i>",cluster::32
+apocalyptic,<b>adj.</b><br>Describing or prophesying the complete destruction of the world.<br><br><i>The film's apocalyptic vision of a post-nuclear wasteland was both terrifying and thought-provoking.</i>,cluster::32
+apostasy,<b>noun</b><br>The abandonment or renunciation of a religious or political belief.<br><br><i>His apostasy from the church caused a rift with his devout family.</i>,cluster::32
+apprehensive,"<b>adj.</b><br>Anxious or fearful that something bad or unpleasant will happen.<br><br><i>She was apprehensive about her first solo flight, but she knew she was well-prepared.</i>",cluster::32
+approbate,<b>verb</b><br>To approve or sanction officially.<br><br><i>The board voted to approbate the new budget proposal.</i>,cluster::32
+archetypal,<b>adj.</b><br>Very typical of a certain kind of person or thing; representing an original pattern.<br><br><i>The hero's journey is an archetypal narrative structure found in many cultures.</i>,cluster::32
+asperse,<b>verb</b><br>To attack or criticize the reputation or integrity of someone with false or damaging statements.<br><br><i>The candidate tried to asperse his opponent with baseless rumors.</i>,cluster::32
+assent,<b>noun</b><br>The expression of approval or agreement; consent.<br><br><i>The proposal was accepted with a nod of assent from the committee chair.</i>,cluster::32
+assiduity,<b>noun</b><br>Constant or close attention to what one is doing; diligence.<br><br><i>Her assiduity in studying paid off when she aced the exam.</i>,cluster::32
+astringency,<b>noun</b><br>The quality of being sharp or bitter in taste or tone; severity.<br><br><i>The astringency of the lemon juice made her pucker.</i>,cluster::32
+asunder,<b>adv.</b><br>Into pieces; apart from each other.<br><br><i>The thunderous blast tore the building asunder.</i>,cluster::32
+augur,<b>verb</b><br>To portend or foreshadow a good or bad outcome; to be a sign of.<br><br><i>Dark clouds augur a coming storm.</i>,cluster::32
+autocrat,<b>noun</b><br>A ruler who has absolute power; a dictator.<br><br><i>The autocrat suppressed all dissent with an iron fist.</i>,cluster::32
+badinage,"<b>noun</b><br>Light, playful conversation; banter.<br><br><i>They engaged in witty badinage throughout the dinner party.</i>",cluster::32
+balm,<b>noun</b><br>A fragrant ointment or preparation used to heal or soothe the skin; something that soothes or comforts.<br><br><i>The soothing balm relieved the itching from the bug bite.</i>,cluster::32
+bastion,<b>noun</b><br>A fortified area or stronghold; a person or thing regarded as upholding a particular cause.<br><br><i>The university is a bastion of liberal thought.</i>,cluster::32
+bedizen,<b>verb</b><br>To dress or decorate gaudily or with vulgar finery.<br><br><i>She bedizened herself with cheap jewelry and bright feathers.</i>,cluster::32
+bemuse,<b>verb</b><br>To cause to be confused or bewildered; to puzzle.<br><br><i>The complex instructions bemused the new employees.</i>,cluster::32
+benediction,"<b>noun</b><br>The utterance of a blessing, especially at the end of a religious service.<br><br><i>The priest closed the service with a benediction.</i>",cluster::32
+benefactor,<b>noun</b><br>A person who gives financial or other aid to a person or cause.<br><br><i>The anonymous benefactor donated a million dollars to the library.</i>,cluster::32
+benevolence,<b>noun</b><br>The quality of being well-meaning; kindness and generosity.<br><br><i>Her benevolence was evident in her volunteer work at the shelter.</i>,cluster::32
+benignity,"<b>noun</b><br>The quality of being kind, gentle, and not harmful.<br><br><i>The old man's benignity made him a favorite among the children.</i>",cluster::32
+bequeath,<b>verb</b><br>To leave property or money to someone in a will; to pass on an idea or tradition.<br><br><i>She bequeathed her entire estate to the animal rescue foundation.</i>,cluster::32
+beset,<b>verb</b><br>To trouble or harass persistently; to surround or hem in.<br><br><i>The team was beset by injuries and losses throughout the season.</i>,cluster::32
+bestow,<b>verb</b><br>to give or present something as a gift or honor.<br><br><i>The king decided to bestow a title upon his loyal knight.</i>,cluster::32
+blanch,"<b>verb</b><br>to make or become pale, especially from fear or cold.<br><br><i>She blanched when she heard the bad news.</i>",cluster::32
+blandish,<b>verb</b><br>to flatter or coax with gentle words.<br><br><i>He tried to blandish his boss into giving him a promotion.</i>,cluster::32
+blandishment,<b>noun</b><br>flattering speech or actions intended to persuade.<br><br><i>She was immune to his blandishments and refused to change her mind.</i>,cluster::32
+bloviate,"<b>verb</b><br>to talk at length, especially in a boastful or pompous manner.<br><br><i>The politician would bloviate for hours without saying anything substantive.</i>",cluster::32
+bluster,"<b>verb</b><br>to talk in a loud, aggressive, or indignant way with little effect.<br><br><i>He blustered about the unfairness of the decision, but no one listened.</i>",cluster::32
+braggadocio,<b>noun</b><br>boastful or arrogant behavior or speech.<br><br><i>His constant braggadocio annoyed his colleagues.</i>,cluster::32
+braggart,<b>noun</b><br>a person who boasts about their achievements or possessions.<br><br><i>Everyone avoids the braggart at parties because he never stops talking about himself.</i>,cluster::32
+capitulation,<b>noun</b><br>the act of surrendering or giving up.<br><br><i>The general's capitulation ended the long siege.</i>,cluster::32
+captious,<b>adj.</b><br>fond of making petty or trivial criticisms.<br><br><i>Her captious remarks about the presentation were unhelpful.</i>,cluster::32
+carouse,"<b>verb</b><br>to engage in a noisy, lively drinking party.<br><br><i>After the exam, the students decided to carouse at the local pub.</i>",cluster::32
+catharsis,<b>noun</b><br>the release of strong or repressed emotions through art or experience.<br><br><i>Crying during the movie provided a much-needed catharsis.</i>,cluster::32
+censorious,<b>adj.</b><br>severely critical; tending to find fault.<br><br><i>The censorious teacher never praised the students' efforts.</i>,cluster::32
+certitude,<b>noun</b><br>absolute certainty or conviction.<br><br><i>She spoke with such certitude that no one dared to disagree.</i>,cluster::32
+circumspection,<b>noun</b><br>caution and careful consideration before acting.<br><br><i>The diplomat's circumspection prevented a diplomatic incident.</i>,cluster::32
+claptrap,<b>noun</b><br>absurd or nonsensical talk; nonsense.<br><br><i>The speech was full of claptrap and empty promises.</i>,cluster::32
+cogency,"<b>noun</b><br>the quality of being clear, logical, and convincing.<br><br><i>The cogency of her argument swayed the jury.</i>",cluster::32
+commingle,<b>verb</b><br>to mix or blend together.<br><br><i>The flavors commingle to create a unique taste.</i>,cluster::32
+concision,<b>noun</b><br>the quality of expressing much in few words; brevity.<br><br><i>The writer's concision made the article easy to read.</i>,cluster::32
+conflation,<b>noun</b><br>the merging of two or more separate concepts into one.<br><br><i>The conflation of fiction with reality caused confusion.</i>,cluster::32
+confute,<b>verb</b><br>to prove something or someone to be wrong or false.<br><br><i>The scientist confuted the old theory with new evidence.</i>,cluster::32
+congenital,<b>adj.</b><br>existing from birth; innate.<br><br><i>The child was born with a congenital heart defect.</i>,cluster::32
+connive,<b>verb</b><br>to secretly cooperate with someone to do something illegal or immoral.<br><br><i>The two employees connived to steal company funds.</i>,cluster::32
+contumely,<b>noun</b><br>insulting or humiliating treatment or language.<br><br><i>He endured the contumely of his captors with dignity.</i>,cluster::32
+coruscate,<b>verb</b><br>to sparkle or flash; to be brilliant or showy.<br><br><i>Her diamond necklace coruscated under the chandelier.</i>,cluster::32
+covenant,"<b>noun</b><br>A formal binding agreement or promise, often of a religious or legal nature.<br><br><i>The two nations signed a covenant to ensure mutual defense.</i>",cluster::32
+culmination,"<b>noun</b><br>The highest or climactic point of something, especially after a long period of development.<br><br><i>The championship game was the culmination of years of hard work.</i>",cluster::32
+dauntless,<b>adj.</b><br>Showing fearlessness and determination; not discouraged by difficulty or danger.<br><br><i>The dauntless explorer ventured into the unknown jungle.</i>,cluster::32
+deduce,"<b>verb</b><br>To reason from general principles or evidence to a specific conclusion.<br><br><i>From the footprints, the detective deduced that the intruder had entered through the window.</i>",cluster::32
+dereliction,<b>noun</b><br>Willful neglect of one's duty or responsibilities.<br><br><i>The security guard was fired for dereliction of duty.</i>,cluster::32
+desuetude,<b>noun</b><br>The state of being no longer used or practiced; disuse.<br><br><i>Many old customs have fallen into desuetude over the centuries.</i>,cluster::32
+detritus,<b>noun</b><br>Waste or debris of any kind; fragmented material resulting from disintegration or wearing away.<br><br><i>The beach was littered with the detritus of the storm.</i>,cluster::32
+diminution,"<b>noun</b><br>A reduction in size, extent, or importance.<br><br><i>The diminution of the army's budget led to fewer training exercises.</i>",cluster::32
+disavow,<b>verb</b><br>To deny any responsibility or support for; to repudiate.<br><br><i>The politician disavowed the controversial statements made by his aide.</i>,cluster::32
+disavowal,<b>noun</b><br>A statement denying knowledge of or responsibility for something; repudiation.<br><br><i>His disavowal of the agreement surprised everyone.</i>,cluster::32
+discernment,<b>noun</b><br>The ability to judge well; keen insight or perception.<br><br><i>She showed great discernment in choosing the right investment.</i>,cluster::32
+discomfit,"<b>verb</b><br>To make someone feel uneasy, embarrassed, or confused; to thwart or frustrate.<br><br><i>The unexpected question discomfited the speaker.</i>",cluster::32
+disparagement,<b>noun</b><br>The act of speaking about someone or something in a belittling or derogatory way.<br><br><i>The article was full of disparagement of the new policy.</i>,cluster::32
+disrepute,<b>noun</b><br>The state of being held in low regard; loss of reputation or respect.<br><br><i>The scandal brought the company into disrepute.</i>,cluster::32
+dissension,"<b>noun</b><br>Disagreement that leads to discord or conflict, especially among a group.<br><br><i>Dissension among the committee members delayed the decision.</i>",cluster::32
+dissimulate,"<b>verb</b><br>To conceal or disguise one's true feelings, thoughts, or intentions.<br><br><i>He tried to dissimulate his disappointment with a smile.</i>",cluster::32
+dissuade,<b>verb</b><br>To persuade someone not to do something; to discourage.<br><br><i>The counselor dissuaded her from dropping out of school.</i>,cluster::32
+doctrinal,"<b>adj.</b><br>Relating to a doctrine or set of principles, especially in religion or politics.<br><br><i>The church's doctrinal teachings were strictly followed.</i>",cluster::32
+dogmatism,"<b>noun</b><br>The tendency to assert beliefs as unquestionably true, often with narrow-mindedness.<br><br><i>His dogmatism alienated those who held different views.</i>",cluster::32
+drivel,<b>noun</b><br>Nonsensical or pointless talk; babble.<br><br><i>His speech was nothing but drivel.</i>,cluster::32
+effulgent,<b>adj.</b><br>Shining brightly; radiant or brilliant.<br><br><i>The effulgent sunrise painted the sky in hues of gold and pink.</i>,cluster::32
+egalitarianism,<b>noun</b><br>The principle that all people are equal and deserve equal rights and opportunities.<br><br><i>The movement promoted egalitarianism across social classes.</i>,cluster::32
+elide,"<b>verb</b><br>To omit or leave out, especially a syllable or part of a word in pronunciation; to ignore or suppress.<br><br><i>In rapid speech, speakers often elide certain sounds.</i>",cluster::32
+elision,<b>noun</b><br>The omission of a sound or syllable in speech; the act of passing over or ignoring something.<br><br><i>The elision of the vowel made the word sound shorter.</i>,cluster::32
+embargo,<b>noun</b><br>An official ban on trade or commercial activity with a particular country; a prohibition or restriction.<br><br><i>The government imposed an embargo on all imports from the hostile nation.</i>,cluster::32
+emend,<b>verb</b><br>to correct or revise (a text)<br><br><i>The editor had to emend several passages in the manuscript before publication.</i>,cluster::32
+emendation,"<b>noun</b><br>a correction or improvement, especially in a text<br><br><i>The scholar's emendation of the ancient manuscript resolved several ambiguities.</i>",cluster::32
+empiricist,"<b>noun</b><br>a person who relies on observation and experience rather than theory<br><br><i>As an empiricist, she insisted on collecting data before forming any hypotheses.</i>",cluster::32
+encroachment,<b>noun</b><br>intrusion into another's territory or rights<br><br><i>The construction of the fence was considered an encroachment on public land.</i>,cluster::32
+enervate,"<b>verb</b><br>to weaken or drain of energy<br><br><i>The prolonged heatwave enervated the entire city, leaving everyone listless.</i>",cluster::32
+enervation,<b>noun</b><br>a state of weakness or exhaustion<br><br><i>The enervation caused by the illness made even simple tasks daunting.</i>,cluster::32
+entail,<b>verb</b><br>to involve or necessitate as a necessary consequence<br><br><i>Accepting the job would entail moving to a new city.</i>,cluster::32
+epigrammatic,<b>adj.</b><br>relating to or resembling an epigram; concise and witty<br><br><i>Her epigrammatic style made her speeches memorable and quotable.</i>,cluster::32
+epitomize,<b>verb</b><br>to be a perfect example or embodiment of<br><br><i>The building epitomizes modern architecture with its clean lines and glass facade.</i>,cluster::32
+euphemistic,<b>adj.</b><br>using mild or indirect language to refer to something unpleasant<br><br><i>The politician's euphemistic description of the budget cuts was met with skepticism.</i>,cluster::32
+euphonious,<b>adj.</b><br>pleasant-sounding; harmonious<br><br><i>The euphonious melody of the flute soothed the anxious crowd.</i>,cluster::32
+exculpatory,<b>adj.</b><br>clearing or tending to clear from alleged fault or guilt<br><br><i>The defense presented exculpatory evidence that proved the defendant's innocence.</i>,cluster::32
+exiguous,<b>adj.</b><br>extremely scanty; meager<br><br><i>The exiguous rations were insufficient to sustain the explorers for the entire journey.</i>,cluster::32
+expostulate,<b>verb</b><br>to express strong disapproval or objection<br><br><i>The teacher expostulated with the student about his disruptive behavior.</i>,cluster::32
+expropriate,"<b>verb</b><br>to take (property) from its owner, especially for public use<br><br><i>The government decided to expropriate the land for a new highway.</i>",cluster::32
+expurgate,<b>verb</b><br>to remove objectionable material from (a text)<br><br><i>The publisher expurgated the novel to make it suitable for younger readers.</i>,cluster::32
+extemporize,<b>verb</b><br>to speak or perform without preparation<br><br><i>The comedian's ability to extemporize kept the audience laughing throughout the show.</i>,cluster::32
+farrago,<b>noun</b><br>a confused mixture; a hodgepodge<br><br><i>The report was a farrago of contradictions and poorly researched claims.</i>,cluster::32
+fecundity,<b>noun</b><br>the quality of being fertile; abundant productivity<br><br><i>The fecundity of the soil allowed for three harvests per year.</i>,cluster::32
+forego,<b>verb</b><br>to precede in time or place; (also spelled forgo) to do without<br><br><i>She decided to forego dessert in order to stick to her diet.</i>,cluster::32
+garish,<b>adj.</b><br>obtrusively bright and showy; gaudy<br><br><i>The garish neon signs along the strip hurt my eyes.</i>,cluster::32
+genuflect,<b>verb</b><br>to bend the knee as in worship or respect<br><br><i>The faithful genuflect when entering the church.</i>,cluster::32
+grandiloquence,<b>noun</b><br>lofty or pompous speech or writing<br><br><i>The senator's grandiloquence failed to hide the lack of substance in his argument.</i>,cluster::32
+hagiography,<b>noun</b><br>a biography that idealizes its subject<br><br><i>The biography was less a critical study and more a hagiography of the famous leader.</i>,cluster::32
+hyperbolic,<b>adj.</b><br>exaggerated; using hyperbole<br><br><i>His hyperbolic claims about the product's benefits were quickly debunked.</i>,cluster::32
+immure,<b>verb</b><br>To enclose within or as if within walls; to imprison.<br><br><i>The political dissident was immured in a remote prison for decades.</i>,cluster::32
+impartiality,<b>noun</b><br>The quality of being fair and unbiased; lack of favoritism.<br><br><i>The judge's impartiality is essential for a fair trial.</i>,cluster::32
+impolitic,"<b>adj.</b><br>Lacking in prudence or foresight; unwise, especially in political matters.<br><br><i>His impolitic remarks during the negotiation damaged the alliance.</i>",cluster::32
+impracticable,<b>adj.</b><br>Impossible to do or carry out; not feasible.<br><br><i>Building a bridge across the ocean is impracticable with current technology.</i>,cluster::32
+incongruent,<b>adj.</b><br>Not in harmony or agreement; incompatible.<br><br><i>The incongruent colors of the room clashed horribly.</i>,cluster::32
+inculpate,"<b>verb</b><br>To incriminate or blame someone for a crime or wrongdoing.<br><br><i>The evidence seemed to inculpate the suspect, but it was later found to be fabricated.</i>",cluster::32
+infelicitous,<b>adj.</b><br>Unfortunate; inappropriate or ill-timed.<br><br><i>His infelicitous comment at the funeral caused great offense.</i>,cluster::32
+inflammatory,"<b>adj.</b><br>Tending to excite anger, disorder, or rebellion; provocative.<br><br><i>The politician's inflammatory speech incited a riot among the crowd.</i>",cluster::32
+infringe,"<b>verb</b><br>To violate or break a law, agreement, or right; to encroach.<br><br><i>Downloading copyrighted music without permission infringes on the artist's rights.</i>",cluster::32
+inoculate,<b>verb</b><br>To immunize against a disease by introducing a weak form of the pathogen; to protect or safeguard.<br><br><i>Doctors recommend that children be inoculated against measles.</i>,cluster::32
+insinuation,"<b>noun</b><br>A sly, subtle, or indirect suggestion or hint, often negative.<br><br><i>Her insinuation that I was dishonest hurt me deeply.</i>",cluster::32
+integrity,<b>noun</b><br>The quality of being honest and having strong moral principles; moral uprightness.<br><br><i>A person of integrity is always trusted.</i>,cluster::32
+intercede,"<b>verb</b><br>To intervene on behalf of someone else, often to mediate or plead for mercy.<br><br><i>The ambassador interceded with the foreign government to secure the release of the prisoners.</i>",cluster::32
+intercession,<b>noun</b><br>The act of interceding; a prayer or petition on behalf of another.<br><br><i>The priest offered intercession for the sick parishioner.</i>,cluster::32
+inveigh,<b>verb</b><br>To speak or write about something with great hostility or criticism.<br><br><i>The editorial inveighed against the new tax policy.</i>,cluster::32
+irreproachable,<b>adj.</b><br>Beyond criticism; flawless and blameless.<br><br><i>Her conduct during the crisis was irreproachable.</i>,cluster::32
+jingoist,"<b>noun</b><br>A person who displays extreme patriotism, especially in the form of aggressive foreign policy.<br><br><i>The jingoist insisted that his country was always right in international disputes.</i>",cluster::32
+labyrinthine,"<b>adj.</b><br>Like a labyrinth; extremely intricate, involved, or confusing.<br><br><i>The labyrinthine corridors of the old castle made it easy to get lost.</i>",cluster::32
+laissez-faire,"<b>adj.</b><br>A policy of non-interference, especially in economic affairs; allowing people to act freely.<br><br><i>The government adopted a laissez-faire approach to the tech industry.</i>",cluster::32
+languor,<b>noun</b><br>A state of physical or mental weariness; lack of energy; listlessness.<br><br><i>The heat of the summer afternoon induced a feeling of languor.</i>,cluster::32
+laudatory,<b>adj.</b><br>Expressing praise and commendation.<br><br><i>The review was filled with laudatory comments about the actor's performance.</i>,cluster::32
+licentiousness,"<b>noun</b><br>Lack of moral restraint, especially in sexual matters; disregard for rules.<br><br><i>The licentiousness of the court was criticized by the clergy.</i>",cluster::32
+limn,<b>verb</b><br>To depict or describe in painting or words; to outline.<br><br><i>The author limns a vivid picture of life in the 19th century.</i>,cluster::32
+lissome,"<b>adj.</b><br>Supple, flexible, and graceful in movement.<br><br><i>The dancer's lissome body moved with exquisite precision.</i>",cluster::32
+loquacity,<b>noun</b><br>The quality of being very talkative; garrulousness.<br><br><i>His loquacity made him the life of the party but tiresome in meetings.</i>,cluster::32
+malcontent,<b>noun</b><br>a person who is dissatisfied and rebellious<br><br><i>The malcontent constantly complained about the company's policies.</i>,cluster::32
+malefactor,<b>noun</b><br>a person who commits a crime or some other wrong<br><br><i>The malefactor was sentenced to ten years in prison.</i>,cluster::32
+malleability,<b>noun</b><br>the quality of being easily shaped or influenced<br><br><i>Gold's malleability makes it ideal for jewelry making.</i>,cluster::32
+masquerade,<b>noun</b><br>a false show or pretense<br><br><i>His kindness was just a masquerade to gain their trust.</i>,cluster::32
+minutiae,"<b>noun</b><br>small, trivial details<br><br><i>They spent hours discussing the minutiae of the contract.</i>",cluster::32
+misapprehension,<b>noun</b><br>a mistaken belief about or interpretation of something<br><br><i>There is a common misapprehension that all bats are blind.</i>,cluster::32
+misconception,<b>noun</b><br>a view or opinion that is incorrect because based on faulty thinking<br><br><i>The misconception that vaccines cause autism persists despite evidence.</i>,cluster::32
+noncommittal,<b>adj.</b><br>not expressing or revealing commitment to a definite opinion or course of action<br><br><i>Her noncommittal answer left everyone uncertain of her intentions.</i>,cluster::32
+obstinacy,<b>noun</b><br>stubbornness or persistence in refusing to change one's opinion or course of action<br><br><i>His obstinacy prevented any compromise in the negotiations.</i>,cluster::32
+opportunistic,"<b>adj.</b><br>exploiting immediate opportunities, often without regard for principle or consequence<br><br><i>The opportunistic politician changed parties to gain power.</i>",cluster::32
+orthodoxy,"<b>noun</b><br>authorized or generally accepted theory, doctrine, or practice<br><br><i>The scientist challenged the orthodoxy of her field with a radical theory.</i>",cluster::32
+ostentation,"<b>noun</b><br>an exaggerated display of wealth, knowledge, or skill intended to impress others<br><br><i>The billionaire's ostentation included a fleet of luxury cars.</i>",cluster::32
+overbearing,<b>adj.</b><br>unpleasantly domineering or arrogant in manner<br><br><i>The overbearing manager micromanaged every detail of the project.</i>,cluster::32
+parochialism,"<b>noun</b><br>a limited or narrow outlook, especially focused on local interests<br><br><i>The parochialism of the town council hindered regional cooperation.</i>",cluster::32
+parsimony,<b>noun</b><br>extreme unwillingness to spend money or use resources<br><br><i>The parsimony of the grant made the research nearly impossible.</i>,cluster::32
+partisanship,<b>noun</b><br>prejudice in favor of a particular cause or group<br><br><i>The journalist's partisanship undermined the credibility of the report.</i>,cluster::32
+patrimony,<b>noun</b><br>property inherited from one's father or male ancestor<br><br><i>The estate was part of the family's patrimony for generations.</i>,cluster::32
+penitence,<b>noun</b><br>the feeling of being sorry for one's wrongdoing; repentance<br><br><i>He showed genuine penitence for his hurtful words.</i>,cluster::32
+periphrastic,<b>adj.</b><br>using indirect or roundabout language<br><br><i>His periphrastic style made the simple story seem complicated.</i>,cluster::32
+perpetrator,"<b>noun</b><br>a person who carries out a harmful, illegal, or immoral act<br><br><i>The police arrested the perpetrator of the robbery.</i>",cluster::32
+pettifogging,"<b>adj.</b><br>quibbling over trivial matters, especially in a legal context<br><br><i>The pettifogging lawyer focused on minor technicalities.</i>",cluster::32
+plenary,<b>adj.</b><br>complete or full in all respects; attended by all participants<br><br><i>The plenary session was attended by all members of the committee.</i>,cluster::32
+pleonasm,"<b>noun</b><br>the use of more words than necessary to express an idea<br><br><i>""I saw it with my own eyes"" is a pleonasm.</i>",cluster::32
+portent,<b>noun</b><br>an omen or sign of something significant to come<br><br><i>The dark clouds were a portent of the approaching storm.</i>,cluster::32
+preeminence,<b>noun</b><br>the quality of being outstanding or supreme in a field<br><br><i>Her preeminence in physics earned her a Nobel Prize.</i>,cluster::32
+preponderance,"<b>noun</b><br>superiority in weight, power, importance, or numbers<br><br><i>The preponderance of evidence pointed to his guilt.</i>",cluster::32
+prepossessing,<b>adj.</b><br>attractive or pleasing in appearance or character<br><br><i>Her prepossessing smile made everyone feel welcome.</i>,cluster::32
+pretension,"<b>noun</b><br>a claim or assertion of something, often with excessive ambition<br><br><i>His pretensions to being a great artist were laughable.</i>",cluster::32
+prevaricator,<b>noun</b><br>a person who speaks evasively or lies<br><br><i>The politician was a known prevaricator.</i>,cluster::32
+prognosis,<b>noun</b><br>a forecast of the probable course of a disease or situation<br><br><i>The doctor gave an optimistic prognosis for her recovery.</i>,cluster::32
+proliferation,<b>noun</b><br>rapid increase or spread<br><br><i>The proliferation of smartphones changed communication.</i>,cluster::32
+prophylactic,<b>adj.</b><br>protecting against disease<br><br><i>Prophylactic measures include vaccinations.</i>,cluster::32
+propound,<b>verb</b><br>to put forward an idea for consideration<br><br><i>He propounded a new theory of evolution.</i>,cluster::32
+proviso,<b>noun</b><br>a condition or stipulation<br><br><i>She agreed to the plan with the proviso that she be consulted.</i>,cluster::32
+pugnacity,<b>noun</b><br>eagerness to fight<br><br><i>His pugnacity got him into many brawls.</i>,cluster::32
+purportedly,<b>adv.</b><br>supposedly; allegedly<br><br><i>The painting was purportedly worth millions.</i>,cluster::32
+quarrelsome,<b>adj.</b><br>inclined to quarrel or disagree<br><br><i>The quarrelsome neighbor complained about everything.</i>,cluster::32
+rancor,<b>noun</b><br>bitter resentment<br><br><i>She harbored no rancor toward her betrayer.</i>,cluster::32
+rebuff,<b>verb</b><br>to reject bluntly or snub<br><br><i>She rebuffed his advances.</i>,cluster::32
+reciprocate,<b>verb</b><br>to return in kind<br><br><i>He reciprocated her kindness with a gift.</i>,cluster::32
+recuperate,"<b>verb</b><br>to recover health or strength<br><br><i>After the surgery, he needed time to recuperate.</i>",cluster::32
+recuse,<b>verb</b><br>to remove oneself from a position due to bias<br><br><i>The judge recused herself from the case.</i>,cluster::32
+refutation,<b>noun</b><br>evidence that disproves an argument<br><br><i>The refutation of his argument was clear.</i>,cluster::32
+remonstrance,<b>noun</b><br>a protest or complaint<br><br><i>She sent a letter of remonstrance to the board.</i>,cluster::32
+repartee,"<b>noun</b><br>quick, witty conversation<br><br><i>Her repartee was sharp and funny.</i>",cluster::32
+repudiation,<b>noun</b><br>rejection of a proposal or belief<br><br><i>The repudiation of the treaty led to conflict.</i>,cluster::32
+revivify,<b>verb</b><br>to revive or restore<br><br><i>The rain revivified the parched plants.</i>,cluster::32
+sagacity,<b>noun</b><br>wisdom<br><br><i>His sagacity was sought by many.</i>,cluster::32
+scintillate,<b>verb</b><br>to sparkle or shine; to be brilliantly witty<br><br><i>Her wit scintillated throughout the evening.</i>,cluster::32
+scruple,<b>noun</b><br>a moral or ethical concern<br><br><i>He had no scruples about cheating.</i>,cluster::32
+scrutiny,<b>noun</b><br>critical observation or examination<br><br><i>The new policy came under intense scrutiny from the media.</i>,cluster::32
+sedulous,<b>adj.</b><br>showing dedication and diligence<br><br><i>The sedulous student spent hours perfecting her essay.</i>,cluster::32
+sequester,<b>verb</b><br>to isolate or hide away<br><br><i>The jury was sequestered to avoid outside influence.</i>,cluster::32
+sine qua non,<b>noun</b><br>an essential condition or element<br><br><i>Hard work is a sine qua non for success.</i>,cluster::32
+sleight,"<b>noun</b><br>dexterity or cunning, especially in trickery<br><br><i>The magician's sleight of hand amazed the audience.</i>",cluster::32
+solipsism,<b>noun</b><br>the view that only one's own mind is sure to exist<br><br><i>His solipsism prevented him from considering others' perspectives.</i>,cluster::32
+somnolence,<b>noun</b><br>drowsiness; sleepiness<br><br><i>The warm room induced a state of somnolence in the students.</i>,cluster::32
+sophist,<b>noun</b><br>a person who uses clever but false arguments<br><br><i>The politician was dismissed as a sophist who twisted the truth.</i>,cluster::32
+splenetic,<b>adj.</b><br>bad-tempered; spiteful<br><br><i>His splenetic outburst surprised his colleagues.</i>,cluster::32
+stagnation,<b>noun</b><br>lack of activity or growth<br><br><i>Economic stagnation led to high unemployment.</i>,cluster::32
+stringency,<b>noun</b><br>strictness; severity<br><br><i>The stringency of the new regulations concerned businesses.</i>,cluster::32
+stultify,<b>verb</b><br>to cause to appear stupid or foolish; to inhibit<br><br><i>Repetitive tasks can stultify the mind.</i>,cluster::32
+subordination,<b>noun</b><br>the state of being lower in rank or position<br><br><i>The subordination of individual desires to the group's needs is essential.</i>,cluster::32
+tautological,"<b>adj.</b><br>needlessly repetitive; redundant<br><br><i>His argument was tautological, saying the same thing in different words.</i>",cluster::32
+temperament,"<b>noun</b><br>a person's nature or disposition<br><br><i>She has a calm temperament, rarely getting upset.</i>",cluster::32
+tenability,<b>noun</b><br>the state of being reasonable or defensible<br><br><i>The tenability of his theory was questioned by experts.</i>,cluster::32
+titillate,<b>verb</b><br>to excite or stimulate pleasantly<br><br><i>The scandalous story was meant to titillate readers.</i>,cluster::32
+truculence,<b>noun</b><br>aggressiveness; ferocity<br><br><i>His truculence made him difficult to work with.</i>,cluster::32
+unanimity,<b>noun</b><br>complete agreement<br><br><i>The decision was reached with unanimity.</i>,cluster::32
+unorthodox,<b>adj.</b><br>contrary to what is usual or accepted<br><br><i>His unorthodox methods often yielded surprising results.</i>,cluster::32
+utilitarianism,<b>noun</b><br>the doctrine that actions are right if they are useful for the majority<br><br><i>Utilitarianism emphasizes the greatest good for the greatest number.</i>,cluster::32
+vacillation,<b>noun</b><br>indecision; wavering<br><br><i>Her vacillation between options frustrated her team.</i>,cluster::32
+vagary,<b>noun</b><br>an unpredictable or erratic action or occurrence<br><br><i>The vagaries of the weather made planning difficult.</i>,cluster::32
+venomous,<b>adj.</b><br>full of malice or spite<br><br><i>The venomous remark left everyone silent.</i>,cluster::32
+vicissitude,<b>noun</b><br>a change of circumstances or fortune<br><br><i>He endured the vicissitudes of life with grace.</i>,cluster::32
+vilification,<b>noun</b><br>The act of defaming or speaking evil of someone; slander.<br><br><i>The candidate's vilification of his opponent backfired when voters saw through the lies.</i>,cluster::32
+virulence,<b>noun</b><br>The severity or harmfulness of a disease or poison; bitter hostility.<br><br><i>The virulence of the outbreak overwhelmed the local hospitals.</i>,cluster::32
+vituperate,<b>verb</b><br>To blame or insult someone in strong or violent language.<br><br><i>The critic vituperated the director for ruining a classic novel.</i>,cluster::32
+volubility,<b>noun</b><br>The quality of being fluent and talkative; garrulousness.<br><br><i>Her volubility made her a hit at parties but exhausting one-on-one.</i>,cluster::32
+xenophobe,<b>noun</b><br>A person who dislikes or fears people from other countries or cultures.<br><br><i>The xenophobe refused to try any cuisine that wasn't from his own country.</i>,cluster::32
+zealotry,"<b>noun</b><br>Excessive or fanatical devotion to a cause, especially in religion or politics.<br><br><i>The zealotry of the group led them to commit violent acts in the name of their beliefs.</i>",cluster::32
+éclat,"<b>noun</b><br>Brilliant or conspicuous success, acclaim, or display.<br><br><i>The young pianist's debut performance was met with great éclat from the audience.</i>",cluster::32

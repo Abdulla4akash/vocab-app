@@ -22858,5 +22858,1397 @@
     "pos": "noun",
     "def": "a gentle, mild breeze",
     "sentence": "The zephyr rustled the leaves, bringing a welcome coolness on the hot summer day."
+  },
+  "abase": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To lower in rank, prestige, or esteem; to humble or degrade.",
+    "sentence": "The dictator's cruel policies sought to abase the citizens and strip them of their dignity."
+  },
+  "abash": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To cause to feel embarrassed, disconcerted, or ashamed.",
+    "sentence": "The unexpected compliment from her rival seemed to abash her rather than please her."
+  },
+  "abnegate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To renounce or reject something, especially a belief, claim, or right.",
+    "sentence": "The monk chose to abnegate all worldly possessions in pursuit of spiritual enlightenment."
+  },
+  "abnegation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The act of renouncing or rejecting something, such as a belief or desire.",
+    "sentence": "Her abnegation of credit for the project's success surprised everyone but demonstrated her humility."
+  },
+  "abominate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To detest thoroughly; to loathe or abhor.",
+    "sentence": "The environmental activist abominated the practice of dumping toxic waste into rivers."
+  },
+  "acclimate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To become accustomed to a new climate or environment; to adapt.",
+    "sentence": "It took the new employees several weeks to acclimate to the fast-paced work culture."
+  },
+  "acculturate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To assimilate or cause to adopt the cultural traits of another group.",
+    "sentence": "Immigrants often acculturate to their new country while preserving elements of their native culture."
+  },
+  "acculturation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The process of cultural exchange and adaptation that occurs when different cultural groups come into contact.",
+    "sentence": "The acculturation of the indigenous population was accelerated by the introduction of formal education."
+  },
+  "acquiescence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Passive acceptance or submission to something without protest.",
+    "sentence": "The board's acquiescence to the CEO's controversial plan surprised many shareholders."
+  },
+  "acuity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Sharpness or keenness of thought, vision, or hearing.",
+    "sentence": "Her mental acuity remained sharp even in her nineties, allowing her to solve complex puzzles."
+  },
+  "adage": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A short, memorable saying that expresses a general truth or piece of advice.",
+    "sentence": "The old adage 'A stitch in time saves nine' reminds us of the value of prompt action."
+  },
+  "adduce": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To cite as evidence or proof in an argument.",
+    "sentence": "The lawyer adduced several precedents to support her case before the judge."
+  },
+  "adjure": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To earnestly command or urge someone to do something, often in a solemn manner.",
+    "sentence": "The general adjured his troops to hold the line at all costs."
+  },
+  "adumbrate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To outline or sketch broadly; to foreshadow or give a vague indication of something.",
+    "sentence": "The preliminary report adumbrated the main findings of the research before its publication."
+  },
+  "adventitious": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Accidental or arising from an external cause, not inherent or natural.",
+    "sentence": "The adventitious discovery of penicillin revolutionized medicine."
+  },
+  "agnostic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Relating to the belief that it is impossible to know whether God or gods exist.",
+    "sentence": "Her agnostic stance meant she neither affirmed nor denied the existence of a deity."
+  },
+  "agrarian": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Relating to land cultivation, agriculture, or rural life.",
+    "sentence": "The agrarian reforms aimed to redistribute land to small farmers."
+  },
+  "allegorical": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Using symbolic characters or events to convey a hidden moral or political meaning.",
+    "sentence": "The novel 'Animal Farm' is an allegorical critique of totalitarianism."
+  },
+  "allegory": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A story, poem, or picture that can be interpreted to reveal a hidden meaning, typically a moral or political one.",
+    "sentence": "Plato's Allegory of the Cave illustrates the journey from ignorance to enlightenment."
+  },
+  "alliteration": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The repetition of the same initial sound in a series of words or syllables.",
+    "sentence": "The phrase 'Peter Piper picked a peck of pickled peppers' is a classic example of alliteration."
+  },
+  "altercation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A noisy argument or disagreement, often involving a conflict.",
+    "sentence": "The altercation between the two drivers escalated into a shouting match on the street."
+  },
+  "amass": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To gather or accumulate a large quantity of something over time.",
+    "sentence": "Over the years, the collector managed to amass a vast collection of rare stamps."
+  },
+  "ambit": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The scope, extent, or bounds of something.",
+    "sentence": "The new regulations fall within the ambit of environmental protection laws."
+  },
+  "analogy": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A comparison between two things, typically for the purpose of explanation or clarification.",
+    "sentence": "The teacher used an analogy comparing the cell to a factory to explain its functions."
+  },
+  "antagonism": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Active hostility or opposition between individuals or groups.",
+    "sentence": "The historical antagonism between the two nations finally gave way to diplomatic relations."
+  },
+  "antagonist": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A person who actively opposes or is hostile to someone or something; an adversary.",
+    "sentence": "In the novel, the antagonist is a corrupt politician who plots against the hero."
+  },
+  "antiquity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The ancient past, especially the period of classical civilization.",
+    "sentence": "Scholars of antiquity study artifacts from ancient Greece and Rome."
+  },
+  "apocalyptic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Describing or prophesying the complete destruction of the world.",
+    "sentence": "The film's apocalyptic vision of a post-nuclear wasteland was both terrifying and thought-provoking."
+  },
+  "apostasy": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The abandonment or renunciation of a religious or political belief.",
+    "sentence": "His apostasy from the church caused a rift with his devout family."
+  },
+  "apprehensive": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Anxious or fearful that something bad or unpleasant will happen.",
+    "sentence": "She was apprehensive about her first solo flight, but she knew she was well-prepared."
+  },
+  "approbate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To approve or sanction officially.",
+    "sentence": "The board voted to approbate the new budget proposal."
+  },
+  "archetypal": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Very typical of a certain kind of person or thing; representing an original pattern.",
+    "sentence": "The hero's journey is an archetypal narrative structure found in many cultures."
+  },
+  "asperse": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To attack or criticize the reputation or integrity of someone with false or damaging statements.",
+    "sentence": "The candidate tried to asperse his opponent with baseless rumors."
+  },
+  "assent": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The expression of approval or agreement; consent.",
+    "sentence": "The proposal was accepted with a nod of assent from the committee chair."
+  },
+  "assiduity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Constant or close attention to what one is doing; diligence.",
+    "sentence": "Her assiduity in studying paid off when she aced the exam."
+  },
+  "astringency": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being sharp or bitter in taste or tone; severity.",
+    "sentence": "The astringency of the lemon juice made her pucker."
+  },
+  "asunder": {
+    "cluster": 32,
+    "pos": "adv.",
+    "def": "Into pieces; apart from each other.",
+    "sentence": "The thunderous blast tore the building asunder."
+  },
+  "augur": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To portend or foreshadow a good or bad outcome; to be a sign of.",
+    "sentence": "Dark clouds augur a coming storm."
+  },
+  "autocrat": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A ruler who has absolute power; a dictator.",
+    "sentence": "The autocrat suppressed all dissent with an iron fist."
+  },
+  "badinage": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Light, playful conversation; banter.",
+    "sentence": "They engaged in witty badinage throughout the dinner party."
+  },
+  "balm": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A fragrant ointment or preparation used to heal or soothe the skin; something that soothes or comforts.",
+    "sentence": "The soothing balm relieved the itching from the bug bite."
+  },
+  "bastion": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A fortified area or stronghold; a person or thing regarded as upholding a particular cause.",
+    "sentence": "The university is a bastion of liberal thought."
+  },
+  "bedizen": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To dress or decorate gaudily or with vulgar finery.",
+    "sentence": "She bedizened herself with cheap jewelry and bright feathers."
+  },
+  "bemuse": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To cause to be confused or bewildered; to puzzle.",
+    "sentence": "The complex instructions bemused the new employees."
+  },
+  "benediction": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The utterance of a blessing, especially at the end of a religious service.",
+    "sentence": "The priest closed the service with a benediction."
+  },
+  "benefactor": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A person who gives financial or other aid to a person or cause.",
+    "sentence": "The anonymous benefactor donated a million dollars to the library."
+  },
+  "benevolence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being well-meaning; kindness and generosity.",
+    "sentence": "Her benevolence was evident in her volunteer work at the shelter."
+  },
+  "benignity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being kind, gentle, and not harmful.",
+    "sentence": "The old man's benignity made him a favorite among the children."
+  },
+  "bequeath": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To leave property or money to someone in a will; to pass on an idea or tradition.",
+    "sentence": "She bequeathed her entire estate to the animal rescue foundation."
+  },
+  "beset": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To trouble or harass persistently; to surround or hem in.",
+    "sentence": "The team was beset by injuries and losses throughout the season."
+  },
+  "bestow": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to give or present something as a gift or honor.",
+    "sentence": "The king decided to bestow a title upon his loyal knight."
+  },
+  "blanch": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to make or become pale, especially from fear or cold.",
+    "sentence": "She blanched when she heard the bad news."
+  },
+  "blandish": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to flatter or coax with gentle words.",
+    "sentence": "He tried to blandish his boss into giving him a promotion."
+  },
+  "blandishment": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "flattering speech or actions intended to persuade.",
+    "sentence": "She was immune to his blandishments and refused to change her mind."
+  },
+  "bloviate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to talk at length, especially in a boastful or pompous manner.",
+    "sentence": "The politician would bloviate for hours without saying anything substantive."
+  },
+  "bluster": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to talk in a loud, aggressive, or indignant way with little effect.",
+    "sentence": "He blustered about the unfairness of the decision, but no one listened."
+  },
+  "braggadocio": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "boastful or arrogant behavior or speech.",
+    "sentence": "His constant braggadocio annoyed his colleagues."
+  },
+  "braggart": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who boasts about their achievements or possessions.",
+    "sentence": "Everyone avoids the braggart at parties because he never stops talking about himself."
+  },
+  "capitulation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the act of surrendering or giving up.",
+    "sentence": "The general's capitulation ended the long siege."
+  },
+  "captious": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "fond of making petty or trivial criticisms.",
+    "sentence": "Her captious remarks about the presentation were unhelpful."
+  },
+  "carouse": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to engage in a noisy, lively drinking party.",
+    "sentence": "After the exam, the students decided to carouse at the local pub."
+  },
+  "catharsis": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the release of strong or repressed emotions through art or experience.",
+    "sentence": "Crying during the movie provided a much-needed catharsis."
+  },
+  "censorious": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "severely critical; tending to find fault.",
+    "sentence": "The censorious teacher never praised the students' efforts."
+  },
+  "certitude": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "absolute certainty or conviction.",
+    "sentence": "She spoke with such certitude that no one dared to disagree."
+  },
+  "circumspection": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "caution and careful consideration before acting.",
+    "sentence": "The diplomat's circumspection prevented a diplomatic incident."
+  },
+  "claptrap": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "absurd or nonsensical talk; nonsense.",
+    "sentence": "The speech was full of claptrap and empty promises."
+  },
+  "cogency": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the quality of being clear, logical, and convincing.",
+    "sentence": "The cogency of her argument swayed the jury."
+  },
+  "commingle": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to mix or blend together.",
+    "sentence": "The flavors commingle to create a unique taste."
+  },
+  "concision": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the quality of expressing much in few words; brevity.",
+    "sentence": "The writer's concision made the article easy to read."
+  },
+  "conflation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the merging of two or more separate concepts into one.",
+    "sentence": "The conflation of fiction with reality caused confusion."
+  },
+  "confute": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to prove something or someone to be wrong or false.",
+    "sentence": "The scientist confuted the old theory with new evidence."
+  },
+  "congenital": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "existing from birth; innate.",
+    "sentence": "The child was born with a congenital heart defect."
+  },
+  "connive": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to secretly cooperate with someone to do something illegal or immoral.",
+    "sentence": "The two employees connived to steal company funds."
+  },
+  "contumely": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "insulting or humiliating treatment or language.",
+    "sentence": "He endured the contumely of his captors with dignity."
+  },
+  "coruscate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to sparkle or flash; to be brilliant or showy.",
+    "sentence": "Her diamond necklace coruscated under the chandelier."
+  },
+  "covenant": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A formal binding agreement or promise, often of a religious or legal nature.",
+    "sentence": "The two nations signed a covenant to ensure mutual defense."
+  },
+  "culmination": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The highest or climactic point of something, especially after a long period of development.",
+    "sentence": "The championship game was the culmination of years of hard work."
+  },
+  "dauntless": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Showing fearlessness and determination; not discouraged by difficulty or danger.",
+    "sentence": "The dauntless explorer ventured into the unknown jungle."
+  },
+  "deduce": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To reason from general principles or evidence to a specific conclusion.",
+    "sentence": "From the footprints, the detective deduced that the intruder had entered through the window."
+  },
+  "dereliction": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Willful neglect of one's duty or responsibilities.",
+    "sentence": "The security guard was fired for dereliction of duty."
+  },
+  "desuetude": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The state of being no longer used or practiced; disuse.",
+    "sentence": "Many old customs have fallen into desuetude over the centuries."
+  },
+  "detritus": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Waste or debris of any kind; fragmented material resulting from disintegration or wearing away.",
+    "sentence": "The beach was littered with the detritus of the storm."
+  },
+  "diminution": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A reduction in size, extent, or importance.",
+    "sentence": "The diminution of the army's budget led to fewer training exercises."
+  },
+  "disavow": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To deny any responsibility or support for; to repudiate.",
+    "sentence": "The politician disavowed the controversial statements made by his aide."
+  },
+  "disavowal": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A statement denying knowledge of or responsibility for something; repudiation.",
+    "sentence": "His disavowal of the agreement surprised everyone."
+  },
+  "discernment": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The ability to judge well; keen insight or perception.",
+    "sentence": "She showed great discernment in choosing the right investment."
+  },
+  "discomfit": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To make someone feel uneasy, embarrassed, or confused; to thwart or frustrate.",
+    "sentence": "The unexpected question discomfited the speaker."
+  },
+  "disparagement": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The act of speaking about someone or something in a belittling or derogatory way.",
+    "sentence": "The article was full of disparagement of the new policy."
+  },
+  "disrepute": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The state of being held in low regard; loss of reputation or respect.",
+    "sentence": "The scandal brought the company into disrepute."
+  },
+  "dissension": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Disagreement that leads to discord or conflict, especially among a group.",
+    "sentence": "Dissension among the committee members delayed the decision."
+  },
+  "dissimulate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To conceal or disguise one's true feelings, thoughts, or intentions.",
+    "sentence": "He tried to dissimulate his disappointment with a smile."
+  },
+  "dissuade": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To persuade someone not to do something; to discourage.",
+    "sentence": "The counselor dissuaded her from dropping out of school."
+  },
+  "doctrinal": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Relating to a doctrine or set of principles, especially in religion or politics.",
+    "sentence": "The church's doctrinal teachings were strictly followed."
+  },
+  "dogmatism": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The tendency to assert beliefs as unquestionably true, often with narrow-mindedness.",
+    "sentence": "His dogmatism alienated those who held different views."
+  },
+  "drivel": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Nonsensical or pointless talk; babble.",
+    "sentence": "His speech was nothing but drivel."
+  },
+  "effulgent": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Shining brightly; radiant or brilliant.",
+    "sentence": "The effulgent sunrise painted the sky in hues of gold and pink."
+  },
+  "egalitarianism": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The principle that all people are equal and deserve equal rights and opportunities.",
+    "sentence": "The movement promoted egalitarianism across social classes."
+  },
+  "elide": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To omit or leave out, especially a syllable or part of a word in pronunciation; to ignore or suppress.",
+    "sentence": "In rapid speech, speakers often elide certain sounds."
+  },
+  "elision": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The omission of a sound or syllable in speech; the act of passing over or ignoring something.",
+    "sentence": "The elision of the vowel made the word sound shorter."
+  },
+  "embargo": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "An official ban on trade or commercial activity with a particular country; a prohibition or restriction.",
+    "sentence": "The government imposed an embargo on all imports from the hostile nation."
+  },
+  "emend": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to correct or revise (a text)",
+    "sentence": "The editor had to emend several passages in the manuscript before publication."
+  },
+  "emendation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a correction or improvement, especially in a text",
+    "sentence": "The scholar's emendation of the ancient manuscript resolved several ambiguities."
+  },
+  "empiricist": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who relies on observation and experience rather than theory",
+    "sentence": "As an empiricist, she insisted on collecting data before forming any hypotheses."
+  },
+  "encroachment": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "intrusion into another's territory or rights",
+    "sentence": "The construction of the fence was considered an encroachment on public land."
+  },
+  "enervate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to weaken or drain of energy",
+    "sentence": "The prolonged heatwave enervated the entire city, leaving everyone listless."
+  },
+  "enervation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a state of weakness or exhaustion",
+    "sentence": "The enervation caused by the illness made even simple tasks daunting."
+  },
+  "entail": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to involve or necessitate as a necessary consequence",
+    "sentence": "Accepting the job would entail moving to a new city."
+  },
+  "epigrammatic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "relating to or resembling an epigram; concise and witty",
+    "sentence": "Her epigrammatic style made her speeches memorable and quotable."
+  },
+  "epitomize": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to be a perfect example or embodiment of",
+    "sentence": "The building epitomizes modern architecture with its clean lines and glass facade."
+  },
+  "euphemistic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "using mild or indirect language to refer to something unpleasant",
+    "sentence": "The politician's euphemistic description of the budget cuts was met with skepticism."
+  },
+  "euphonious": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "pleasant-sounding; harmonious",
+    "sentence": "The euphonious melody of the flute soothed the anxious crowd."
+  },
+  "exculpatory": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "clearing or tending to clear from alleged fault or guilt",
+    "sentence": "The defense presented exculpatory evidence that proved the defendant's innocence."
+  },
+  "exiguous": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "extremely scanty; meager",
+    "sentence": "The exiguous rations were insufficient to sustain the explorers for the entire journey."
+  },
+  "expostulate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to express strong disapproval or objection",
+    "sentence": "The teacher expostulated with the student about his disruptive behavior."
+  },
+  "expropriate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to take (property) from its owner, especially for public use",
+    "sentence": "The government decided to expropriate the land for a new highway."
+  },
+  "expurgate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to remove objectionable material from (a text)",
+    "sentence": "The publisher expurgated the novel to make it suitable for younger readers."
+  },
+  "extemporize": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to speak or perform without preparation",
+    "sentence": "The comedian's ability to extemporize kept the audience laughing throughout the show."
+  },
+  "farrago": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a confused mixture; a hodgepodge",
+    "sentence": "The report was a farrago of contradictions and poorly researched claims."
+  },
+  "fecundity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the quality of being fertile; abundant productivity",
+    "sentence": "The fecundity of the soil allowed for three harvests per year."
+  },
+  "forego": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to precede in time or place; (also spelled forgo) to do without",
+    "sentence": "She decided to forego dessert in order to stick to her diet."
+  },
+  "garish": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "obtrusively bright and showy; gaudy",
+    "sentence": "The garish neon signs along the strip hurt my eyes."
+  },
+  "genuflect": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to bend the knee as in worship or respect",
+    "sentence": "The faithful genuflect when entering the church."
+  },
+  "grandiloquence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "lofty or pompous speech or writing",
+    "sentence": "The senator's grandiloquence failed to hide the lack of substance in his argument."
+  },
+  "hagiography": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a biography that idealizes its subject",
+    "sentence": "The biography was less a critical study and more a hagiography of the famous leader."
+  },
+  "hyperbolic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "exaggerated; using hyperbole",
+    "sentence": "His hyperbolic claims about the product's benefits were quickly debunked."
+  },
+  "immure": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To enclose within or as if within walls; to imprison.",
+    "sentence": "The political dissident was immured in a remote prison for decades."
+  },
+  "impartiality": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being fair and unbiased; lack of favoritism.",
+    "sentence": "The judge's impartiality is essential for a fair trial."
+  },
+  "impolitic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Lacking in prudence or foresight; unwise, especially in political matters.",
+    "sentence": "His impolitic remarks during the negotiation damaged the alliance."
+  },
+  "impracticable": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Impossible to do or carry out; not feasible.",
+    "sentence": "Building a bridge across the ocean is impracticable with current technology."
+  },
+  "incongruent": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Not in harmony or agreement; incompatible.",
+    "sentence": "The incongruent colors of the room clashed horribly."
+  },
+  "inculpate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To incriminate or blame someone for a crime or wrongdoing.",
+    "sentence": "The evidence seemed to inculpate the suspect, but it was later found to be fabricated."
+  },
+  "infelicitous": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Unfortunate; inappropriate or ill-timed.",
+    "sentence": "His infelicitous comment at the funeral caused great offense."
+  },
+  "inflammatory": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Tending to excite anger, disorder, or rebellion; provocative.",
+    "sentence": "The politician's inflammatory speech incited a riot among the crowd."
+  },
+  "infringe": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To violate or break a law, agreement, or right; to encroach.",
+    "sentence": "Downloading copyrighted music without permission infringes on the artist's rights."
+  },
+  "inoculate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To immunize against a disease by introducing a weak form of the pathogen; to protect or safeguard.",
+    "sentence": "Doctors recommend that children be inoculated against measles."
+  },
+  "insinuation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A sly, subtle, or indirect suggestion or hint, often negative.",
+    "sentence": "Her insinuation that I was dishonest hurt me deeply."
+  },
+  "integrity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being honest and having strong moral principles; moral uprightness.",
+    "sentence": "A person of integrity is always trusted."
+  },
+  "intercede": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To intervene on behalf of someone else, often to mediate or plead for mercy.",
+    "sentence": "The ambassador interceded with the foreign government to secure the release of the prisoners."
+  },
+  "intercession": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The act of interceding; a prayer or petition on behalf of another.",
+    "sentence": "The priest offered intercession for the sick parishioner."
+  },
+  "inveigh": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To speak or write about something with great hostility or criticism.",
+    "sentence": "The editorial inveighed against the new tax policy."
+  },
+  "irreproachable": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Beyond criticism; flawless and blameless.",
+    "sentence": "Her conduct during the crisis was irreproachable."
+  },
+  "jingoist": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A person who displays extreme patriotism, especially in the form of aggressive foreign policy.",
+    "sentence": "The jingoist insisted that his country was always right in international disputes."
+  },
+  "labyrinthine": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Like a labyrinth; extremely intricate, involved, or confusing.",
+    "sentence": "The labyrinthine corridors of the old castle made it easy to get lost."
+  },
+  "laissez-faire": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "A policy of non-interference, especially in economic affairs; allowing people to act freely.",
+    "sentence": "The government adopted a laissez-faire approach to the tech industry."
+  },
+  "languor": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A state of physical or mental weariness; lack of energy; listlessness.",
+    "sentence": "The heat of the summer afternoon induced a feeling of languor."
+  },
+  "laudatory": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Expressing praise and commendation.",
+    "sentence": "The review was filled with laudatory comments about the actor's performance."
+  },
+  "licentiousness": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Lack of moral restraint, especially in sexual matters; disregard for rules.",
+    "sentence": "The licentiousness of the court was criticized by the clergy."
+  },
+  "limn": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To depict or describe in painting or words; to outline.",
+    "sentence": "The author limns a vivid picture of life in the 19th century."
+  },
+  "lissome": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "Supple, flexible, and graceful in movement.",
+    "sentence": "The dancer's lissome body moved with exquisite precision."
+  },
+  "loquacity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being very talkative; garrulousness.",
+    "sentence": "His loquacity made him the life of the party but tiresome in meetings."
+  },
+  "malcontent": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who is dissatisfied and rebellious",
+    "sentence": "The malcontent constantly complained about the company's policies."
+  },
+  "malefactor": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who commits a crime or some other wrong",
+    "sentence": "The malefactor was sentenced to ten years in prison."
+  },
+  "malleability": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the quality of being easily shaped or influenced",
+    "sentence": "Gold's malleability makes it ideal for jewelry making."
+  },
+  "masquerade": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a false show or pretense",
+    "sentence": "His kindness was just a masquerade to gain their trust."
+  },
+  "minutiae": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "small, trivial details",
+    "sentence": "They spent hours discussing the minutiae of the contract."
+  },
+  "misapprehension": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a mistaken belief about or interpretation of something",
+    "sentence": "There is a common misapprehension that all bats are blind."
+  },
+  "misconception": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a view or opinion that is incorrect because based on faulty thinking",
+    "sentence": "The misconception that vaccines cause autism persists despite evidence."
+  },
+  "noncommittal": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "not expressing or revealing commitment to a definite opinion or course of action",
+    "sentence": "Her noncommittal answer left everyone uncertain of her intentions."
+  },
+  "obstinacy": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "stubbornness or persistence in refusing to change one's opinion or course of action",
+    "sentence": "His obstinacy prevented any compromise in the negotiations."
+  },
+  "opportunistic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "exploiting immediate opportunities, often without regard for principle or consequence",
+    "sentence": "The opportunistic politician changed parties to gain power."
+  },
+  "orthodoxy": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "authorized or generally accepted theory, doctrine, or practice",
+    "sentence": "The scientist challenged the orthodoxy of her field with a radical theory."
+  },
+  "ostentation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "an exaggerated display of wealth, knowledge, or skill intended to impress others",
+    "sentence": "The billionaire's ostentation included a fleet of luxury cars."
+  },
+  "overbearing": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "unpleasantly domineering or arrogant in manner",
+    "sentence": "The overbearing manager micromanaged every detail of the project."
+  },
+  "parochialism": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a limited or narrow outlook, especially focused on local interests",
+    "sentence": "The parochialism of the town council hindered regional cooperation."
+  },
+  "parsimony": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "extreme unwillingness to spend money or use resources",
+    "sentence": "The parsimony of the grant made the research nearly impossible."
+  },
+  "partisanship": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "prejudice in favor of a particular cause or group",
+    "sentence": "The journalist's partisanship undermined the credibility of the report."
+  },
+  "patrimony": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "property inherited from one's father or male ancestor",
+    "sentence": "The estate was part of the family's patrimony for generations."
+  },
+  "penitence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the feeling of being sorry for one's wrongdoing; repentance",
+    "sentence": "He showed genuine penitence for his hurtful words."
+  },
+  "periphrastic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "using indirect or roundabout language",
+    "sentence": "His periphrastic style made the simple story seem complicated."
+  },
+  "perpetrator": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who carries out a harmful, illegal, or immoral act",
+    "sentence": "The police arrested the perpetrator of the robbery."
+  },
+  "pettifogging": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "quibbling over trivial matters, especially in a legal context",
+    "sentence": "The pettifogging lawyer focused on minor technicalities."
+  },
+  "plenary": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "complete or full in all respects; attended by all participants",
+    "sentence": "The plenary session was attended by all members of the committee."
+  },
+  "pleonasm": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the use of more words than necessary to express an idea",
+    "sentence": "\"I saw it with my own eyes\" is a pleonasm."
+  },
+  "portent": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "an omen or sign of something significant to come",
+    "sentence": "The dark clouds were a portent of the approaching storm."
+  },
+  "preeminence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the quality of being outstanding or supreme in a field",
+    "sentence": "Her preeminence in physics earned her a Nobel Prize."
+  },
+  "preponderance": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "superiority in weight, power, importance, or numbers",
+    "sentence": "The preponderance of evidence pointed to his guilt."
+  },
+  "prepossessing": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "attractive or pleasing in appearance or character",
+    "sentence": "Her prepossessing smile made everyone feel welcome."
+  },
+  "pretension": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a claim or assertion of something, often with excessive ambition",
+    "sentence": "His pretensions to being a great artist were laughable."
+  },
+  "prevaricator": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who speaks evasively or lies",
+    "sentence": "The politician was a known prevaricator."
+  },
+  "prognosis": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a forecast of the probable course of a disease or situation",
+    "sentence": "The doctor gave an optimistic prognosis for her recovery."
+  },
+  "proliferation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "rapid increase or spread",
+    "sentence": "The proliferation of smartphones changed communication."
+  },
+  "prophylactic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "protecting against disease",
+    "sentence": "Prophylactic measures include vaccinations."
+  },
+  "propound": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to put forward an idea for consideration",
+    "sentence": "He propounded a new theory of evolution."
+  },
+  "proviso": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a condition or stipulation",
+    "sentence": "She agreed to the plan with the proviso that she be consulted."
+  },
+  "pugnacity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "eagerness to fight",
+    "sentence": "His pugnacity got him into many brawls."
+  },
+  "purportedly": {
+    "cluster": 32,
+    "pos": "adv.",
+    "def": "supposedly; allegedly",
+    "sentence": "The painting was purportedly worth millions."
+  },
+  "quarrelsome": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "inclined to quarrel or disagree",
+    "sentence": "The quarrelsome neighbor complained about everything."
+  },
+  "rancor": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "bitter resentment",
+    "sentence": "She harbored no rancor toward her betrayer."
+  },
+  "rebuff": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to reject bluntly or snub",
+    "sentence": "She rebuffed his advances."
+  },
+  "reciprocate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to return in kind",
+    "sentence": "He reciprocated her kindness with a gift."
+  },
+  "recuperate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to recover health or strength",
+    "sentence": "After the surgery, he needed time to recuperate."
+  },
+  "recuse": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to remove oneself from a position due to bias",
+    "sentence": "The judge recused herself from the case."
+  },
+  "refutation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "evidence that disproves an argument",
+    "sentence": "The refutation of his argument was clear."
+  },
+  "remonstrance": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a protest or complaint",
+    "sentence": "She sent a letter of remonstrance to the board."
+  },
+  "repartee": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "quick, witty conversation",
+    "sentence": "Her repartee was sharp and funny."
+  },
+  "repudiation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "rejection of a proposal or belief",
+    "sentence": "The repudiation of the treaty led to conflict."
+  },
+  "revivify": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to revive or restore",
+    "sentence": "The rain revivified the parched plants."
+  },
+  "sagacity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "wisdom",
+    "sentence": "His sagacity was sought by many."
+  },
+  "scintillate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to sparkle or shine; to be brilliantly witty",
+    "sentence": "Her wit scintillated throughout the evening."
+  },
+  "scruple": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a moral or ethical concern",
+    "sentence": "He had no scruples about cheating."
+  },
+  "scrutiny": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "critical observation or examination",
+    "sentence": "The new policy came under intense scrutiny from the media."
+  },
+  "sedulous": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "showing dedication and diligence",
+    "sentence": "The sedulous student spent hours perfecting her essay."
+  },
+  "sequester": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to isolate or hide away",
+    "sentence": "The jury was sequestered to avoid outside influence."
+  },
+  "sine qua non": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "an essential condition or element",
+    "sentence": "Hard work is a sine qua non for success."
+  },
+  "sleight": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "dexterity or cunning, especially in trickery",
+    "sentence": "The magician's sleight of hand amazed the audience."
+  },
+  "solipsism": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the view that only one's own mind is sure to exist",
+    "sentence": "His solipsism prevented him from considering others' perspectives."
+  },
+  "somnolence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "drowsiness; sleepiness",
+    "sentence": "The warm room induced a state of somnolence in the students."
+  },
+  "sophist": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person who uses clever but false arguments",
+    "sentence": "The politician was dismissed as a sophist who twisted the truth."
+  },
+  "splenetic": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "bad-tempered; spiteful",
+    "sentence": "His splenetic outburst surprised his colleagues."
+  },
+  "stagnation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "lack of activity or growth",
+    "sentence": "Economic stagnation led to high unemployment."
+  },
+  "stringency": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "strictness; severity",
+    "sentence": "The stringency of the new regulations concerned businesses."
+  },
+  "stultify": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to cause to appear stupid or foolish; to inhibit",
+    "sentence": "Repetitive tasks can stultify the mind."
+  },
+  "subordination": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the state of being lower in rank or position",
+    "sentence": "The subordination of individual desires to the group's needs is essential."
+  },
+  "tautological": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "needlessly repetitive; redundant",
+    "sentence": "His argument was tautological, saying the same thing in different words."
+  },
+  "temperament": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a person's nature or disposition",
+    "sentence": "She has a calm temperament, rarely getting upset."
+  },
+  "tenability": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the state of being reasonable or defensible",
+    "sentence": "The tenability of his theory was questioned by experts."
+  },
+  "titillate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "to excite or stimulate pleasantly",
+    "sentence": "The scandalous story was meant to titillate readers."
+  },
+  "truculence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "aggressiveness; ferocity",
+    "sentence": "His truculence made him difficult to work with."
+  },
+  "unanimity": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "complete agreement",
+    "sentence": "The decision was reached with unanimity."
+  },
+  "unorthodox": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "contrary to what is usual or accepted",
+    "sentence": "His unorthodox methods often yielded surprising results."
+  },
+  "utilitarianism": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "the doctrine that actions are right if they are useful for the majority",
+    "sentence": "Utilitarianism emphasizes the greatest good for the greatest number."
+  },
+  "vacillation": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "indecision; wavering",
+    "sentence": "Her vacillation between options frustrated her team."
+  },
+  "vagary": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "an unpredictable or erratic action or occurrence",
+    "sentence": "The vagaries of the weather made planning difficult."
+  },
+  "venomous": {
+    "cluster": 32,
+    "pos": "adj.",
+    "def": "full of malice or spite",
+    "sentence": "The venomous remark left everyone silent."
+  },
+  "vicissitude": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "a change of circumstances or fortune",
+    "sentence": "He endured the vicissitudes of life with grace."
+  },
+  "vilification": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The act of defaming or speaking evil of someone; slander.",
+    "sentence": "The candidate's vilification of his opponent backfired when voters saw through the lies."
+  },
+  "virulence": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The severity or harmfulness of a disease or poison; bitter hostility.",
+    "sentence": "The virulence of the outbreak overwhelmed the local hospitals."
+  },
+  "vituperate": {
+    "cluster": 32,
+    "pos": "verb",
+    "def": "To blame or insult someone in strong or violent language.",
+    "sentence": "The critic vituperated the director for ruining a classic novel."
+  },
+  "volubility": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "The quality of being fluent and talkative; garrulousness.",
+    "sentence": "Her volubility made her a hit at parties but exhausting one-on-one."
+  },
+  "xenophobe": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "A person who dislikes or fears people from other countries or cultures.",
+    "sentence": "The xenophobe refused to try any cuisine that wasn't from his own country."
+  },
+  "zealotry": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Excessive or fanatical devotion to a cause, especially in religion or politics.",
+    "sentence": "The zealotry of the group led them to commit violent acts in the name of their beliefs."
+  },
+  "éclat": {
+    "cluster": 32,
+    "pos": "noun",
+    "def": "Brilliant or conspicuous success, acclaim, or display.",
+    "sentence": "The young pianist's debut performance was met with great éclat from the audience."
   }
 }

@@ -158,5 +158,10 @@
     "name": "Mixed Vocabulary",
     "desc": "Diverse abstract nouns and adjectives with no single semantic theme.",
     "count": 143
+  },
+  "32": {
+    "name": "New Additions",
+    "desc": "Recently added high-value GRE words",
+    "count": 232
   }
 }
