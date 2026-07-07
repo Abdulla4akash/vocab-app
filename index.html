@@ -949,7 +949,7 @@
       <div class="home-header">
         <div>
           <h2 id="homeTitle">Choose a group</h2>
-          <p id="homeSubtitle" class="subtitle">Pick a named cluster or study the full deck.</p>
+          <p id="homeSubtitle" class="subtitle">Pick a cluster or study the full deck.</p>
         </div>
         <div class="home-actions">
           <p id="totalCount" class="total-count"></p>
@@ -1062,7 +1062,6 @@
     const state = {
       vocab: [],
       blurbs: {},
-      clusters: {},
       studyGroupsByCluster: {},
       searchIndex: [],
       searchQuery: "",
@@ -1137,27 +1136,17 @@
       return response.json();
     }
 
-    async function fetchOptionalJson(path) {
-      try {
-        return await fetchJson(path);
-      } catch (error) {
-        return {};
-      }
-    }
-
     async function init() {
       try {
-        const [vocabData, blurbData, clusterData] = await Promise.all([
+        const [vocabData, blurbData] = await Promise.all([
           fetchJson("vocab.json"),
-          fetchJson("vocab_blurbs.json"),
-          fetchOptionalJson("clusters.json")
+          fetchJson("vocab_blurbs.json")
         ]);
 
         state.vocab = Object.entries(vocabData)
           .map(([word, data]) => ({ word, ...data }))
           .sort((a, b) => a.word.localeCompare(b.word));
         state.blurbs = blurbData || {};
-        state.clusters = clusterData || {};
         buildStudyGroups();
         buildSearchIndex();
 
@@ -1203,24 +1192,20 @@
           cluster,
           groupNumber: index + 1,
           totalGroups: chunks.length,
-          label: `C${cluster}G${index + 1}`,
+          label: `Group ${index + 1}`,
           words
         }));
       }
     }
 
     function getClusterName(cluster) {
-      const meta = state.clusters[String(cluster)] || {};
-      return typeof meta.name === "string" && meta.name.trim()
-        ? meta.name.trim()
-        : `Cluster ${cluster}`;
+      const number = Number(cluster);
+      return Number.isFinite(number) ? `Cluster ${number + 1}` : "Cluster";
     }
 
-    function getClusterDescription(cluster) {
-      const meta = state.clusters[String(cluster)] || {};
-      return typeof meta.desc === "string" && meta.desc.trim()
-        ? meta.desc.trim()
-        : "";
+    function getClusterLabel(cluster) {
+      const number = Number(cluster);
+      return Number.isFinite(number) ? `Set ${String(number + 1).padStart(2, "0")}` : "Set";
     }
 
     function getClusterStudyGroups(cluster) {
@@ -1232,7 +1217,7 @@
     }
 
     function getStudyGroupTitle(group) {
-      return `${getClusterName(group.cluster)} — Group ${group.groupNumber} of ${group.totalGroups}`;
+      return `${getClusterName(group.cluster)} - Group ${group.groupNumber} of ${group.totalGroups}`;
     }
 
     function getStudyGroupDescription(group) {
@@ -1392,7 +1377,7 @@
       );
 
       els.homeTitle.textContent = "Choose a cluster";
-      els.homeSubtitle.textContent = "Pick a named cluster or study the full deck.";
+      els.homeSubtitle.textContent = "Pick a cluster or study the full deck.";
       els.totalCount.textContent = `${state.vocab.length.toLocaleString()} words total`;
       els.groupGrid.replaceChildren();
 
@@ -1408,8 +1393,7 @@
       counts.forEach((count, cluster) => {
         els.groupGrid.appendChild(createGroupButton({
           title: getClusterName(cluster),
-          label: `Cluster ${String(cluster).padStart(2, "0")}`,
-          description: getClusterDescription(cluster),
+          label: getClusterLabel(cluster),
           count,
           onClick: () => showClusterGroups(cluster)
         }));
@@ -1421,7 +1405,7 @@
       const totalWords = groups.reduce((sum, group) => sum + group.words.length, 0);
 
       els.homeTitle.textContent = getClusterName(cluster);
-      els.homeSubtitle.textContent = getClusterDescription(cluster) || "Choose a study group from this cluster.";
+      els.homeSubtitle.textContent = "Choose a study group from this cluster.";
       els.totalCount.textContent = `${getWordCountLabel(totalWords)} in ${groups.length} ${groups.length === 1 ? "group" : "groups"}`;
       els.groupGrid.replaceChildren();
 
